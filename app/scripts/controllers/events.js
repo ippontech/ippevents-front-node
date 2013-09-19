@@ -33,6 +33,11 @@ app.controller('EventsCtrl', function ($scope, $location, Events) {
     });
   };
 
+  // redirection vers le détail
+  $scope.gotoEvent = function(index){
+    $location.path("/event/" + $scope.events[index]._id);
+  };
+
   // redirection vers la page d'édition
   $scope.gotoUpdateEvent = function(index){
     $location.path("/edit-event/" + $scope.events[index]._id);

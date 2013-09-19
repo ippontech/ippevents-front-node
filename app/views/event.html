@@ -1,0 +1,34 @@
+<h1>{{event.title}}</h1>
+
+<a class="btn btn-default" href="/#/add-performance/{{event._id}}">Ajouter une session</a>
+
+
+Les sessions
+
+  <ul class="list-unstyled">
+    <li ng-repeat="performance in event.performances">
+      <div class="row">
+        <div class="col-sm-8">
+          {{performance.title}}
+        </div>
+        <div class="col-sm-4">
+<!--           {{session.speaker.firstname}}
+          {{session.speaker.name}} -->
+        </div>
+      </div>
+    </li>
+  </ul>
+
+    <ul class="list-unstyled">
+    <li ng-repeat="a in event.address">
+      <div class="row">
+        <div class="col-sm-8">
+          {{a.title}}
+        </div>
+        <div class="col-sm-4">
+
+        </div>
+      </div>
+    </li>
+  </ul>
+

@@ -155,6 +155,10 @@ footer {
     li:last-child {
       border-bottom: 0;
     }
+    li:hover {
+      background-color: $ippon-secondary-lighter;
+      cursor: pointer;
+    }
   }
 }
 

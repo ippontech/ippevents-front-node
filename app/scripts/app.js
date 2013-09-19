@@ -79,9 +79,22 @@ app.config(function ($routeProvider) {
     templateUrl: 'views/edit-event.html',
     controller: 'EditEventCtrl'
   })
+  .when('/event/:id', {
+    templateUrl: 'views/event.html',
+    controller: 'EventCtrl'
+  })
+  .when('/edit-performance', {
+    templateUrl: 'views/edit-performance.html',
+    controller: 'EditPerformanceCtrl'
+  })
+  .when('/add-performance/:id', {
+    templateUrl: 'views/add-performance.html',
+    controller: 'AddPerformanceCtrl'
+  })
   .otherwise({
     redirectTo: '/'
   });
+  
 });
 
 app.run(['$rootScope', '$http', '$location', function(scope, $http, $location) {

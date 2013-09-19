@@ -24,7 +24,7 @@
   </h4>
 
   <ul class="list-unstyled list-event">
-    <li ng-repeat="event in events | filter : search | orderBy:predicate:reverse">
+    <li ng-repeat="event in events | filter : search | orderBy:predicate:reverse" ng-click="gotoEvent($index)">
       <div class="row">
         <div class="col-sm-4">
           <p class="date">
@@ -33,7 +33,7 @@
             {{event.dateEnd | date:'shortDate'}}
           </p>
         </div>
-        <h4 class="col-sm-8">{{event.title}}</h4>
+          <h4 class="col-sm-8">{{event.title}}</h4>
       </div>
       <div class="row">
         <div class="col-sm-4">

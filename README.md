@@ -27,7 +27,7 @@ Installer Yeoman
 	
 Installer le générateur "AngularJS" pour Yeoman 
 
-	npm install -g generator-angular 1 Pré requis
+	npm install -g generator-angular
 
 [Pour en savoir plus](http://yeoman.io/)
 
