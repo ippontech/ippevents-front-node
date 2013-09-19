@@ -1,13 +1,25 @@
-<h1>{{event.title}}</h1>
+<div class="bg-secondary">
+  <div class="container">
+    <h1>{{event.title}}</h1>
+  </div>
+</div>
 
-<a class="btn btn-default" href="/#/add-performance/{{event._id}}">Ajouter une session</a>
+<section class="container">
+  <h2>Les sessions</h2>
 
+  <div class="well well-complementary">
+    <!-- formulaire de recherche -->
+    <form name="searchForm" class="form-horizontal">
+      <input type="text" ng-model="search" class="form-control" placeholder="Rechercher ..." autofocus>
+      <div class="text-right">
+        <a class="btn btn-default" href="/#/add-performance/{{event._id}}">Ajouter une session</a>
+      </div>
+    </form>
+  </div>
 
-Les sessions
-
-  <ul class="list-unstyled">
-    <li ng-repeat="performance in event.performances">
-      <div class="row">
+  <ul class="list-unstyled list-light">
+    <li ng-repeat="performance in event.performances | filter : search">
+      <article class="row">
         <div class="col-sm-8">
           {{performance.title}}
         </div>
@@ -15,7 +27,7 @@ Les sessions
 <!--           {{session.speaker.firstname}}
           {{session.speaker.name}} -->
         </div>
-      </div>
+      </article>
     </li>
   </ul>
 
@@ -31,4 +43,4 @@ Les sessions
       </div>
     </li>
   </ul>
-
+</section>

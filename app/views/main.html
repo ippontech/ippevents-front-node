@@ -4,7 +4,7 @@
     <div class="col-sm-4 text-right text-primary">
       <h1>{{website.common.title}}</h1>
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-8" style="padding: 20px 0 20px 0;">
       {{website.common.description}}
     </div>
   </div>
@@ -63,14 +63,18 @@
 <section ng-controller="SponsorsCtrl" class="partners">
   <div class="bg-primary">
     <div class="container">
-      <h2 >Partenaires</h2>
+      <h2>Partenaires</h2>
     </div>
   </div>
-  <div class="container">
-    <ul class="list-unstyled list-inline">
+  <br/>
+  <section class="container text-center">
+    <a href="http://www.atomes.com/" target="_blank">
+      <img src="/images/atomes.png" alt="Atomes"/>
+    </a>
+<!--     <ul class="list-unstyled list-inline">
       <li ng-repeat="sponsor in sponsors">
         <img src="{{sponsor.logo}}" alt="{{sponsor.name}}" height="100px;"/>
       </li>
-    </ul>
-  </div>
+    </ul> -->
+  </section>
 </section>

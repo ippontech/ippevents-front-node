@@ -107,6 +107,9 @@ footer {
     padding-right: 20px;
     padding-top: 30px;
     text-transform: uppercase;
+    @media screen and (min-width: $screen-sm) {
+      padding: 0;
+    }
   }
 }
 
