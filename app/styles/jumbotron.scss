@@ -1,0 +1,15 @@
+////////////////////////////////////////////////////////////////////////
+// Surcharge "jumbotron" s'appuyant sur Twitter Bootstrap 3
+////////////////////////////////////////////////////////////////////////
+
+@import "mixins.scss";
+@import "variables.scss";
+
+.jumbotron {
+
+  .container & {
+    border-radius: 0; // Only round corners at higher resolutions if contained in a container
+  }
+
+  // @include gradient-vertical($start-color: $ippon-secondary, $end-color: $ippon-primary, $start-percent: 0%, $end-percent: 100%);
+}

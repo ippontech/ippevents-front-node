@@ -1,0 +1,27 @@
+////////////////////////////////////////////////////////////////////////
+// Surcharge des boutons s'appuyant sur Twitter Bootstrap 3
+////////////////////////////////////////////////////////////////////////
+
+@import "mixins.scss";
+@import "variables.scss";
+
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+// Core styles
+.btn {
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-primary {
+  @include button-variant($white, $ippon-complementary, $ippon-complementary);
+}

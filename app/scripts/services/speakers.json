@@ -1,0 +1,22 @@
+[
+	{
+		"id" : "1",
+		"firstname" : "Alvin",
+		"lastname" : "Berthelot",				
+		"sessions" :
+			[
+				{
+					"title" : "L'agilité dans la mobilité",
+					"format" : "Lightning talk",
+					"timebox" : "15min"
+				},
+				{
+					"title" : "Let's sketch !",
+					"format" : "Atelier",
+					"timebox" : "2h"
+				}
+			]
+	},
+	{"id" : "2", "firstname"  : "Rebecca", "lastname" : "Warrior"},
+	{"id" : "3", "firstname"  : "Fela", "lastname" : "Kuti"}
+]

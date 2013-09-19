@@ -1,0 +1,23 @@
+////////////////////////////////////////////////////////////////////////
+// Surcharge "well" s'appuyant sur Twitter Bootstrap 3
+////////////////////////////////////////////////////////////////////////
+
+@import "mixins.scss";
+@import "variables.scss";
+
+// Base class
+.well {
+  border-radius: 0;
+}
+
+.well-complementary {
+  background-color: $ippon-complementary;
+}
+
+// Sizes
+.well-lg {
+  border-radius: 0;
+}
+.well-sm {
+  border-radius: 0;
+}

@@ -1,0 +1,24 @@
+////////////////////////////////////////////////////////////////////////
+// Définitions des mixins propres au thème
+////////////////////////////////////////////////////////////////////////
+
+@import "variables.scss";
+
+@mixin event-horizontal-gap() {
+  border-bottom: 2px dashed $gray-lighter;
+  padding-bottom: 20px;
+}
+
+@mixin event-no-gap() {
+  border: 0;
+  padding: 0;
+}
+
+@mixin event-vertical-gap() {
+  // @include event-no-gap();
+  padding-bottom: 0;
+  padding-top: 0;
+  border-bottom: 0;
+  border-right: 2px dashed $gray-lighter;
+}
+

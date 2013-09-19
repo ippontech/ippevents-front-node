@@ -1,0 +1,76 @@
+<!-- Présentation -->
+<section class="container presentation">
+  <div class="row">
+    <div class="col-sm-4 text-right text-primary">
+      <h1>{{website.common.title}}</h1>
+    </div>
+    <div class="col-sm-8">
+      {{website.common.description}}
+    </div>
+  </div>
+</section>
+
+<!-- Mise à la une des prochains événements -->
+<section ng-controller="EventsCtrl" class="next-events">
+  <div class="bg-secondary">
+    <div class="container">
+      <h2>Événements</h2>
+    </div>
+  </div>
+  <div class="container">
+    <h3 class="hidden-xs">Le prochain</h3>
+    <div ng-repeat="event in events | limitTo:1" class="row event">
+      <div class="col-sm-4 text-center">
+        <img src="{{event.picture}}" alt="{{event.title}}"
+        class="img-responsive" />
+      </div>
+      <div class="col-sm-8 main">
+        <p class="date">{{event.dateBegin | date:'fullDate'}} <i class="icon-chevron-right icon-white"></i> {{event.dateEnd | date:'fullDate'}}</p>
+        <h4 class="title">{{event.title}}</h4>
+        <p class="teasing">{{event.teasing}}</p>
+        <div class="action">
+          <a class="btn btn-primary" href="http://designmodo.com/flat">
+            <i class="icon-chevron-right icon-white"></i><i class="icon-chevron-right icon-white"></i> Inscription
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row" ng-show="events.length > 1">
+      <h3 class="hidden-xs">Les suivants</h3>
+      <ul class="list-unstyled">
+        <li ng-repeat="event in events | limitTo:4" ng-show="!$first" class="col-sm-{{12 / (Math.min(3,events.length-1))}}">
+          <div class="event-mini">
+            <p class="date">{{event.dateBegin | date:'shortDate'}} <i class="icon-chevron-right"></i> {{event.dateEnd | date:'shortDate'}}</p>
+            <h4 class="title">{{event.title}}</h4>
+            <img src="{{event.picture}}" alt="{{event.title}}"
+        class="img-responsive" />
+            <p class="teasing">{{event.teasing}}</p>
+            <div class="action">
+              <a class="btn btn-primary" href="http://designmodo.com/flat">
+                <i class="icon-chevron-right icon-white"></i><i class="icon-chevron-right icon-white"></i> Inscription
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- Affichage des sponsors -->
+<section ng-controller="SponsorsCtrl" class="partners">
+  <div class="bg-primary">
+    <div class="container">
+      <h2 >Partenaires</h2>
+    </div>
+  </div>
+  <div class="container">
+    <ul class="list-unstyled list-inline">
+      <li ng-repeat="sponsor in sponsors">
+        <img src="{{sponsor.logo}}" alt="{{sponsor.name}}" height="100px;"/>
+      </li>
+    </ul>
+  </div>
+</section>

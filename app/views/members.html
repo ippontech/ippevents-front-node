@@ -1,0 +1,38 @@
+<div class="bg-secondary">
+  <div class="container">
+    <h1>Les membres de l'équipe</h1>
+  </div>
+</div>
+
+<section class="container">
+  <div class="well well-complementary">
+    <!-- formulaire de recherche -->
+    <form name="searchForm" class="form-horizontal">
+      <input type="text" ng-model="search" class="form-control" placeholder="Rechercher ..." autofocus>
+      <div class="text-right">
+        <a class="btn btn-default" href="/#/edit-member">Ajouter</a>
+      </div>
+    </form>
+  </div>
+  <!-- liste des membres -->
+  <div class="col-lg-12">
+    <ul class="list-unstyled list-member">
+      <li ng-repeat="member in members | filter : search">
+        <div class="row">
+          <div class="col-lg-6">
+            <h4>{{member.firstname}} {{member.lastname}}</h4>
+            <p>{{member.email}}</p>
+          </div>
+          <div class="col-lg-6">
+
+          </div>
+        </div>
+        <div class="text-right">
+          <button class="btn btn-primary text-right" ng-click="gotoUpdateMember($index)"><i class="icon-edit icon-white"></i> Modifier</button>
+          <button class="btn btn-danger text-right" ng-click="deleteMember($index)"><i class="icon-trash icon-white"></i> Supprimer</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+

@@ -1,0 +1,45 @@
+<section ng-controller="EditMemberCtrl" class="container">
+  <h2 ng-show="!member._id">Ajouter un membre à l'équipe</h2>
+  <h2 ng-show="member._id">Modifier un membre de l'équipe</h2>
+  <form name="memberForm" class="form-horizontal">
+    <div class="form-group">
+      <label for="inputFirstname" class="col-lg-2 control-label">
+        Prénom
+        <span ng-show="memberForm.inputFirstname.$error.required" class="label-form-error"> obligatoire !</span>
+      </label>
+      <div class="col-lg-10">
+        <input type="text" ng-model="member.firstname" required class="form-control" name="inputFirstname" placeholder="John">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputLastname" class="col-lg-2 control-label">
+        Nom
+        <span ng-show="memberForm.inputLastname.$error.required" class="label-form-error"> obligatoire !</span>
+      </label>
+      <div class="col-lg-10">
+        <input type="text" ng-model="member.lastname" required class="form-control" name="inputLastname" placeholder="Doe">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">
+        Email
+        <span ng-show="memberForm.inputEmail.$error.required" class="label-form-error"> obligatoire !</span>
+        <span ng-show="memberForm.inputEmail.$error.email" class="label-form-error"> au mauvais format !</span>
+      </label>
+      <div class="col-lg-10">
+        <input type="email" ng-model="member.email" required class="form-control" name="inputEmail" placeholder="jdoe@ippon.fr">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputTwitter" class="col-lg-2 control-label">Twitter</label>
+      <div class="col-lg-10">
+        <input type="twitter" ng-model="member.twitter" class="form-control" name="inputTwitter" placeholder="@jdoe">
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" ng-disabled="memberForm.$invalid" ng-show="!member._id" ng-click="createMember(member)">Ajouter</button>
+      <a class="btn btn-warning" href="/#/members" ng-show="member._id" ng-click="active='members'">Annuler</a>
+      <button type="submit" class="btn btn-primary" ng-disabled="memberForm.$invalid" ng-show="member._id" ng-click="updateMember(member)">Modifier</button>
+    </div>
+  </form>
+</section>

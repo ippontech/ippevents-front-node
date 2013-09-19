@@ -1,0 +1,72 @@
+////////////////////////////////////////////////////////////////////////
+// Définitions des couleurs
+////////////////////////////////////////////////////////////////////////
+
+@import "fonts.scss";
+
+// Colors
+// -------------------------
+
+$black: #000;
+$white: #fff;
+$gray: lighten(#000, 50%); // #c0c0c0
+$gray-lighter: lighten(#000, 90%);
+$gray-lightest: lighten(#000, 95%);
+
+$ippon-primary: #e42420;
+$ippon-primary-lighter: #0c5d58;
+$ippon-secondary: #fcc007;
+$ippon-secondary-lighter: #fdcb15;
+$ippon-complementary: #10b5c6;
+$ippon-complementary-darker: #157187;
+
+$list-light-border-size: 2px;
+
+$list-light-even-background-color: $white;
+$list-light-even-border-color: $ippon-primary;
+$list-light-odd-background-color: $gray-lightest;
+$list-light-odd-border-color: $ippon-secondary;
+
+// Définition des opacités
+$opacity-low: 0.25;
+$opacity-medium: 0.5;
+$opacity-high: 0.75;
+
+
+$img-bg-dark1: "../images/escheresque_ste.png";
+$img-bg-dark2: "../images/diagmonds.png";
+$img-bg-dark3: "../images/pw_maze_black.png";
+$img-bg-dark4: "../images/triangles.png";
+
+// Media queries breakpoints
+// --------------------------------------------------
+
+// Extra small screen / phone
+$screen-xs: 480px;
+$screen-phone: $screen-xs;
+
+// Small screen / tablet
+$screen-sm: 768px;
+$screen-tablet: $screen-sm;
+
+// Medium screen / desktop
+$screen-md: 992px;
+$screen-desktop: $screen-md;
+
+// Large screen / wide desktop
+$screen-lg: 1200px;
+$screen-lg-desktop: $screen-lg;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: ($screen-sm - 1);
+$screen-sm-max: ($screen-md - 1);
+$screen-md-max: ($screen-lg - 1);
+
+
+// Typography
+// -------------------------
+
+$font-main: "TrCenturyGothic", Helvetica, Arial, sans-serif;
+$font-text: Arial, Helvetica, sans-serif;
+$body-font-family: $font-text;
+$headings-font-family: $font-main;
