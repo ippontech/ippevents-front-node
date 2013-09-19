@@ -1,119 +1,67 @@
 
-# IppEvents
-
-
+# IppEvents Front (via Node.js)
 
 ***
 
-## 1. Environnements de développement
+**IppEvents** est une application Web permettant de promouvoir des événements (conférences / ateliers / jeux sérieux / retours d'expérience).
 
-Vous avez le choix entre installer l'environnment sur votre poste ou utiliser une machine virtuelle de type Linux
+Ce projet est la partie "front" du projet **IppEvents**, c'est lui qui permet de d'afficher uen interface pour consulter et éditer des données.
 
-### 1.1 Environnement de développement "perso"
+Ce projet s'appuie sur [Node.js](http://nodejs.org/) pour la partie serveur et s'appuie sur la stack [Yeoman](http://yeoman.io/) couplé à [AngularJS](http://angularjs.org).
 
-#### 1.1.1 Pré requis
+***
+
+## 1. Environnements requis
+
+### 1.1. Installations requises
 
 1. Installer [Git](http://git-scm.com/)
 2. Installer [Node JS](http://nodejs.org/)
 3. Installer [Ruby](http://www.ruby-lang.org/fr/)
 4. Installer [Compass](http://compass-style.org/install/)
-5. Installer [MongoDB](http://www.mongodb.org/)
-
-#### 1.1.2. Yeoman
-
-Pour en savoir plus sur [Yeoman](http://yeoman.io/)
+5. Installer Yeoman et le générateur AngularJS
 
 Installer Yeoman
 
 	npm install -g yo
 	
-Installer le générateur "Angular JS" pour Yeoman 
+Installer le générateur "AngularJS" pour Yeoman 
 
-	npm install -g generator-angular 
+	npm install -g generator-angular 1 Pré requis
 
-#### 1.1.3. Espace de travail
-
-Créer un espace de travail. Pour simplifier la suite celui-ci s'appellera "coding dojo" et son chemin sera ~/codingdojo
+[Pour en savoir plus](http://yeoman.io/)
 
 
-### 1.2 Environnement de développement sur la machine virtuelle "XUbuntu made in Ippon"
+### 1.2 Espace de travail
 
-Récupérer la machine virtuelle : 
-
-`/!\ pas encore mise à disposition`
-
-Concernant la machine virtuelle :
-
-`xubunutu / reverse`
-
-***
+Créer un espace de travail. Pour simplifier la suite, celui-ci se situera ~/workspaces
 
 ## 2. Installation du projet
 
-#### 1. Récupérer les sources
+### 2.1. Récupérer les sources
 
 En ligne de commande, se positionner au bon endroit
 
-	cd ~/codingdojo
+	cd ~/workspaces
 	
 Récupérer les sources du repository GitHub
 
-	git clone https://github.com/ippontech/ippevents.git
+	git clone https://github.com/ippontech/ippevents-front-node.git
 
-Il faudra saisir vos identifiants GitHub Ippon qui ont les accès à ce repository privé.
+Créer un espace de travail. Pour simplifier la suite celui-ci s'appellera "coding dojo" et son chemin sera ~/codingdojo
 
-#### 2. Récupérer les dépendances
+### 2.2. Récupérer les dépendances
 
 Se positioner dans le répertoire créé
 
-	cd ~/codingdojo/ippevents
+	cd ~/workspaces/ippevents-front-node
 
-S'assurer d'être ok au niveau des dépendances
+S'assurer d'être ok au niveau des dépendances Node.js et Yeoman
 
 	sudo npm install
 	bower install
 	
-#### 3. Démarrer Mongo DB
-
-Démarrer la base
-
-*Linux*
-	
-	sudo service mongodb start
-	
-*Mac*
-	
-	mongod
-	
-	
-Lancer le client Mongo DB
-
-	mongo
-	
-Faire les vérifications de circonstances
-
-	show dbs;
-	
-Doit retourner iedb (la base du projet, pour IppEventsDataBase)
-
-Se connecter à la base "iedb"
-
-	use iedb;
-	
-Vérifier la présence de la collection "members"
-
-	show collections;
-
-Doit retourner une liste avec "members" dedans	
-	
-Vérifier les données de la collection
-
-	db.members.find();
-	
-Doit retourner des données "Alvin, etc." et "Christophe, etc."
-(Si les données ne sont pas présentes, vous pouvez passer à l'étape 4 ci-dessous qui initialise une base vide. Si rien n'est présent en réfectuant le test c'est qu'il y a un problème)
-	
-#### 4. Démarrer le serveur REST
+### 2.3. Démarrer le serveur REST
 
 Dans une nouvelle fenêtre, se positioner dans le répertoire approprié
 
@@ -125,14 +73,14 @@ Démarrer le serveur Node (Express)
 
 S'assurer que le [service "Members" est opérationnel](http://localhost:3000/members)
 
-#### 5. Démarrer l'application
+### 2.4. Démarrer l'application
 
 Dans une nouvelle fenêtre, se positioner dans le répertoire approprié
 
-	cd ~/codingdojo/ippevents
+	cd ~/workspaces/ippevents-front-node
 	
 Démarrer l'application
 
 	grunt server
 
-Normalement un navigateur s'ouvre de lui même, s'assurer de la [connexion de l'application au service "Members"](http://localhost:9000/#/team)
+Normalement un navigateur s'ouvre de lui même, s'assurer de la [connexion de l'application au service "Members"](http://localhost:9000/#/members)
