@@ -14,6 +14,11 @@ app.controller('MainCtrl', function ($scope, Events) {
     $scope.events = resp;
   });
 
+  // redirection vers le détail
+  $scope.gotoEvent = function(index){
+    $location.path("/event/" + $scope.events[index]._id);
+  };
+
   // fonction de création d'un événement
   $scope.createEvent = function(event){
 

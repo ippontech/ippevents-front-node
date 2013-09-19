@@ -24,7 +24,7 @@
   </h4>
 
   <ul class="list-unstyled list-event">
-    <li ng-repeat="event in events | filter : search | orderBy:predicate:reverse" ng-click="gotoEvent($index)">
+    <li ng-repeat="event in events | filter : search | orderBy:predicate:reverse">
       <div class="row">
         <div class="col-sm-4">
           <p class="date">
@@ -42,7 +42,10 @@
         <div class="col-sm-8">{{event.teasing}}</div>
       </div>
       <div class="text-right">
-        <button class="btn btn-primary text-right" ng-click="gotoUpdateEvent($index)"><i class="icon-edit icon-white"></i> Modifier</button>
+        <button class="btn btn-primary text-right" ng-click="gotoEvent($index)">
+          <i class="icon-chevron-right icon-white"></i><i class="icon-chevron-right icon-white"></i> Inscription
+        </button>
+        <button class="btn btn-warning text-right" ng-click="gotoUpdateEvent($index)"><i class="icon-edit icon-white"></i> Modifier</button>
         <button class="btn btn-danger text-right" ng-click="deleteEvent($index)"><i class="icon-trash icon-white"></i> Supprimer</button>
       </div>
     </li>
