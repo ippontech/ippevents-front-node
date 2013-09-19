@@ -1,8 +1,8 @@
 
 // services local
-var SERVICES_URI = 'http://localhost:3000';
+// var SERVICES_URI = 'http://localhost:3000';
 // services Heroku cloud
-// var SERVICES_URI = 'http://ippevents-services-node.herokuapp.com';
+var SERVICES_URI = 'http://ippevents-services-node.herokuapp.com';
 
 angular.module('connectionServices', []).factory('Connections', function($http) {
 
