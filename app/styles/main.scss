@@ -24,6 +24,42 @@ html, body {
 
 body {
   font-family: $body-font-family;
+
+  > header {
+    background-color: $black;
+    color: $white;
+    padding-left: 20px;
+    padding-right: 20px;
+    a {
+      color: $white;
+      display: inline-block;
+      font-family: $headings-font-family;
+      margin-bottom: 10px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 20px;
+      text-transform: uppercase;
+      &:hover {
+        background-color: $ippon-complementary;
+        color: $black;
+        text-decoration: none;
+      }
+    }
+    nav {
+      margin-bottom: 0;
+      @media screen and (min-width: $screen-xs) {
+        margin-bottom: 40px;
+      }
+    }
+    nav.home .home,
+    nav.events .events,
+    nav.speakers .speakers,
+    nav.contact .contact,
+    nav.members .members {
+      background-color: $ippon-complementary;
+    }
+  }
 }
 
 ul.list-members {
@@ -56,41 +92,7 @@ ul.list-light {
   }
 }
 
-header {
-  background-color: $black;
-  color: $white;
-  padding-left: 20px;
-  padding-right: 20px;
-  a {
-    color: $white;
-    display: inline-block;
-    font-family: $headings-font-family;
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-    text-transform: uppercase;
-    &:hover {
-      background-color: $ippon-complementary;
-      color: $black;
-      text-decoration: none;
-    }
-  }
-  nav {
-    margin-bottom: 0;
-    @media screen and (min-width: $screen-xs) {
-      margin-bottom: 40px;
-    }
-  }
-  nav.home .home,
-  nav.events .events,
-  nav.speakers .speakers,
-  nav.contact .contact,
-  nav.members .members {
-    background-color: $ippon-complementary;
-  }
-}
+
 
 footer {
   background-color: $black;
@@ -223,6 +225,32 @@ list-event, .list-event {
     padding: 5px 10px 5px 10px;
   }
 }
+
+.performances {
+  article {
+    header {
+      margin: 0;
+      h1 {
+        font-size: 1.5em;
+      }
+    }
+    padding: 20px;
+    a {
+      color: $black;
+      text-decoration: none;
+    }
+  }
+  article:nth-child(even) {
+    background-color: $gray-lighter;
+    border-left: $list-light-border-size solid $list-light-even-border-color;
+  }
+  article:nth-child(odd) {
+    background-color: $white;
+    border-left: $list-light-border-size solid $list-light-odd-border-color;
+  }
+}
+
+
 .partners {
   ul {
     li {

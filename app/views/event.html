@@ -21,27 +21,118 @@
     <!-- formulaire de recherche -->
     <form name="searchForm" class="form-horizontal">
       <input type="text" ng-model="search" class="form-control" placeholder="Rechercher ..." autofocus>
+
       <div class="text-right">
         <a class="btn btn-default" href="/#/add-performance/{{event._id}}">Ajouter une session</a>
       </div>
     </form>
+
   </div>
 
-  <ul class="list-unstyled list-light">
-    <li ng-repeat="performance in event.performances | filter : search">
-      <article class="row">
-        <div class="col-sm-8">
-          {{performance.title}}
-        </div>
-        <div class="col-sm-4">
-<!--           {{session.speaker.firstname}}
-          {{session.speaker.name}} -->
-        </div>
-      </article>
-    </li>
-  </ul>
+<!--   <h4>
+    <ng-pluralize count="event.performances.length"
+                  when="{'0'    : 'Aucune session trouvée. :-(',
+                         'one'  : '1 session trouvée !',
+                         'other': '{} sessions trouvées !'}">
+    </ng-pluralize>
+  </h4> -->
 
-    <ul class="list-unstyled">
+        <section class="accordion performances" id="accordion">
+          <article class="accordion-group" ng-repeat="performance in event.performances | filter : search">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}">
+              <header>
+                <h1>
+                  {{performance.title}}
+                </h1>
+                <div>
+                  <span ng-bind-html-unsafe="performance.grade | stars"></span>
+                  {{performance.status}}
+                </div>
+              </header>
+              </a>
+            </div>
+            <div id="collapse{{$index}}" class="accordion-body collapse fade">
+              <div class="accordion-inner">
+
+                <hr/>
+                <div>Format : {{performance.format}}</div>
+                <div>Durée : {{performance.timebox}}</div>
+                <div>Niveau des participants : {{performance.level}}</div>
+                <div>Nombre de participants : {{performance.maxPeople}}</div>
+                <hr/>
+                <p>
+                  {{performance.teasing}}
+                </p>
+                <p>
+                  {{performance.summary}}
+                </p>
+                <p>
+                  {{performance.description}}
+                </p>
+                <hr/>
+                <div>
+                  {{performance.firstname}}
+                  {{performance.lastname}}
+                </div>
+                <div>
+                  <a href="mailto:{{performance.email}}">
+                    <i class="icon-envelope"></i> {{performance.email}}
+                  </a>
+                </div>
+                <div>
+                  <i class="icon-phone"></i> {{performance.phone}}
+                </div>
+                <div>
+                  <a href="https://twitter.com/{{performance.twitter}}" target="_blank">
+                    <i class="icon-twitter"></i> {{performance.twitter}}
+                  </a>
+                </div>
+                <div>
+                  {{performance.company}}
+                </div>
+                <div>
+                  {{performance.biography}}
+                </div>
+                <hr/>
+                <div>
+                  {{performance.goodToKnow}}
+                </div>
+                <div>
+                  {{performance.needs}}
+                </div>
+
+              </div>
+            </div>
+          </article>
+        </section>
+
+
+
+
+
+<!--   <ul class="list-unstyled list-light">
+    <li ng-repeat="performance in event.performances | filter : search">
+      <article class="row"> -->
+
+
+        <!-- <div class="col-sm-8"> -->
+
+          <!-- <a ng-click="gotoPerformance($index)"> -->
+            <!-- {{performance.title}} -->
+          <!-- </a> -->
+
+<!--         </div>
+        <div class="col-sm-4">
+          {{performance.firstname}}
+          {{performance.lastname}}
+        </div> -->
+
+<!--       </article>
+    </li>
+  </ul> -->
+
+<!--     <ul class="list-unstyled">
     <li ng-repeat="a in event.address">
       <div class="row">
         <div class="col-sm-8">
@@ -52,5 +143,5 @@
         </div>
       </div>
     </li>
-  </ul>
+  </ul> -->
 </section>

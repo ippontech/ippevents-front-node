@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('EventCtrl', function ($scope, $location, $routeParams, Events) {
+app.controller('PerformanceCtrl', function ($scope, $location, $routeParams, Events) {
 
   var id = $routeParams.id;
 
@@ -16,11 +16,6 @@ app.controller('EventCtrl', function ($scope, $location, $routeParams, Events) {
 
   // redirection vers le détail
   $scope.gotoPerformance = function(index){
-    $location.path("/performance/" + $scope.events.performances[index]._id);
-  };
-
-  // redirection vers le détail
-  $scope.gradePerformance = function(index){
     $location.path("/performance/" + $scope.events.performances[index]._id);
   };
 
