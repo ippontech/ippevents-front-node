@@ -1,6 +1,6 @@
 {
-  "name": "ippevents",
-  "version": "0.0.0",
+  "name": "ippevents-front-node",
+  "version": "0.1.0",
   "dependencies": {
     "express": "3.x"
   },
