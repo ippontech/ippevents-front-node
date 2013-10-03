@@ -48,8 +48,6 @@ Récupérer les sources du repository GitHub
 
 	git clone https://github.com/ippontech/ippevents-front-node.git
 
-Créer un espace de travail. Pour simplifier la suite celui-ci s'appellera "coding dojo" et son chemin sera ~/codingdojo
-
 ### 2.2. Récupérer les dépendances
 
 Se positioner dans le répertoire créé
