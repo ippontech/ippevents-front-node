@@ -63,15 +63,7 @@ S'assurer d'être ok au niveau des dépendances Node.js et Yeoman
 	
 ### 2.3. Démarrer le serveur REST
 
-Dans une nouvelle fenêtre, se positioner dans le répertoire approprié
-
-	cd ~/codingdojo/ippevents/server
-	
-Démarrer le serveur Node (Express)
-
-	node server.js
-
-S'assurer que le [service "Members" est opérationnel](http://localhost:3000/members)
+S'assurer que le [service "Members" est opérationnel](http://localhost:3000/members) et si il n'existe pas, c'est qu'il est temps d'installer la [partie "services" du projet](https://github.com/ippontech/ippevents-services-node) ;)
 
 ### 2.4. Démarrer l'application
 
