@@ -5,6 +5,7 @@ var app = angular.module('ippeventsApp', [
   'connectionServices',
   'eventsServices',
   'membersServices',
+  'personsServices',
   'eventUI',
   'ngCookies']);
 
@@ -66,6 +67,18 @@ app.config(function ($routeProvider) {
   .when('/edit-member/:id', {
     templateUrl: 'views/edit-member.html',
     controller: 'EditMemberCtrl'
+  })
+  /*.when('/persons', {
+    templateUrl: 'views/persons.html',
+    controller: 'PersonsCtrl'
+  })*/
+  .when('/edit-person', {
+    templateUrl: 'views/edit-person.html',
+    controller: 'EditPersonCtrl'
+  })
+  .when('/edit-person/:id', {
+    templateUrl: 'views/edit-person.html',
+    controller: 'EditPersonCtrl'
   })
   .when('/events', {
     templateUrl: 'views/events.html',
