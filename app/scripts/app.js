@@ -91,6 +91,10 @@ app.config(function ($routeProvider) {
     templateUrl: 'views/add-performance.html',
     controller: 'AddPerformanceCtrl'
   })
+  .when('/event/:idEvent/performance/:idPerf', {
+    templateUrl: 'views/performance.html',
+    controller: 'PerformanceCtrl'
+  })
   .otherwise({
     redirectTo: '/'
   });
