@@ -1,0 +1,39 @@
+<section ng-controller="EditPersonCtrl" class="container">
+  <h2 ng-show="!person._id">Ajouter une personne</h2>
+  <h2 ng-show="person._id">Modifier une personne</h2>
+  <form name="personForm" class="form-horizontal">
+    <div class="form-group">
+      <label for="inputFirstname" class="col-lg-2 control-label">
+        Prénom
+        <span ng-show="personForm.inputFirstname.$error.required" class="label-form-error"> obligatoire !</span>
+      </label>
+      <div class="col-lg-10">
+        <input type="text" ng-model="person.first_name" required class="form-control" name="inputFirstname" placeholder="John">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputLastname" class="col-lg-2 control-label">
+        Nom
+        <span ng-show="personForm.inputLastname.$error.required" class="label-form-error"> obligatoire !</span>
+      </label>
+      <div class="col-lg-10">
+        <input type="text" ng-model="person.last_name" required class="form-control" name="inputLastname" placeholder="Doe">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">
+        Email
+        <span ng-show="personForm.inputEmail.$error.required" class="label-form-error"> obligatoire !</span>
+        <span ng-show="personForm.inputEmail.$error.email" class="label-form-error"> au mauvais format !</span>
+      </label>
+      <div class="col-lg-10">
+        <input type="email" ng-model="person.email" required class="form-control" name="inputEmail" placeholder="jdoe@ippon.fr">
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" ng-disabled="personForm.$invalid" ng-show="!person._id" ng-click="createPerson(person)">Ajouter</button>
+      <a class="btn btn-warning" href="/#/person" ng-show="person._id" ng-click="active='person'">Annuler</a>
+      <button type="submit" class="btn btn-primary" ng-disabled="personForm.$invalid" ng-show="person._id" ng-click="updatePerson(person)">Modifier</button>
+    </div>
+  </form>
+</section>

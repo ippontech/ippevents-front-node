@@ -101,3 +101,37 @@ angular.module('membersServices', []).factory('Members', function($http) {
    };
 
 });
+
+// angular.module('personServices', ['ngResource'])
+// .factory('Persons', function($resource) {
+//   return $resource('/scripts/services/persons.json');
+// });
+
+angular.module('personsServices', []).factory('Persons', function($http) {
+    
+    var API_URI_PERSON = SERVICES_URI + '/person';
+    var API_URI_PERSONS = SERVICES_URI + '/persons';
+    
+    return {
+
+        fetch : function() {
+            return $http.get(API_URI_PERSONS);
+        },
+
+        create : function(person) {
+            return  $http.post(API_URI_PERSON, person);
+        },
+
+        delete  : function(id) {
+            return $http.delete(API_URI_PERSON + '/' + id);
+        },
+
+        fetchOne : function(id) {
+            return $http.get(API_URI_PERSON + '/' + id);
+        },
+
+        update : function(person) {
+           return $http.put(API_URI_PERSON + '/' + person._id, person);
+       }
+   };
+});
