@@ -5,14 +5,9 @@ app.controller('PerformanceCtrl', function ($scope, $location, $routeParams, Eve
   var eventId = $routeParams.event_id;
   var id = $routeParams.id;
 
-  if (undefined != id) {
-    Events.fetchOne(eventId).success(function(resp) {
-      angular.forEach(resp.performances, function(performance) {
-        console.log("Coucou");
-        if (performance._id == id) {
-          $scope.performance = performance;
-        }
-      });
+  if (undefined != eventId && undefined != id) {
+    Events.fetchPerformance(eventId, id).success(function(resp) {
+      $scope.performance = resp;
     })
     .error(function(resp){
       console.log(resp);
