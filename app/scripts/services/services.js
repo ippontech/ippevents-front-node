@@ -55,6 +55,10 @@ angular.module('eventsServices', []).factory('Events', function($http) {
             return $http.get(API_URI + '/' + id);
         },
 
+        fetchPerformance : function(eventId, performanceId) {
+            return $http.get(API_URI + '/' + eventId + '/performances/' + performanceId);
+        },
+
         update : function(event) {
            return $http.put(API_URI + '/' + event._id, event);
        }

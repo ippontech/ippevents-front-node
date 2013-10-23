@@ -1,31 +1,17 @@
 'use strict';
 
-angular.module('ippeventsApp')
-  .controller('PerformanceCtrl', function ($scope, $routeParams, Performance) {
-    // var id = $routeParams.id;
-    // var performance = Performance.query();
-    // $scope.performance = performance;
-    // console.log("performance = " + JSON.stringify (performance));
+app.controller('PerformanceCtrl', function ($scope, $location, $routeParams, Events) {
 
-    $scope.performance = {
-  "id" : "2",
-  "title" : "Let's sketch !",
-  "format" : "Atelier",
-  "timebox" : "2h",
-  "status" : "approved",        
-  "speakers" :
-    [
-      {
-        "id" : "1",
-        "firstname" : "Alvin",
-        "lastname" : "Berthelot",
-        "email" : "aberthelot@ippon.fr"
-      },
-      {
-        "id" : "2",
-        "firstname" : "Matt",
-        "lastname" : "Groening"
-      }
-    ]
-};
+  var eventId = $routeParams.event_id;
+  var id = $routeParams.id;
+
+  if (undefined != eventId && undefined != id) {
+    Events.fetchPerformance(eventId, id).success(function(resp) {
+      $scope.performance = resp;
+    })
+    .error(function(resp){
+      console.log(resp);
+    });
+  }
+
 });
