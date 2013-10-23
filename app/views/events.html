@@ -9,14 +9,44 @@
   <div class="well well-complementary">
     <!-- formulaire de recherche -->
     <form name="searchForm" class="form-horizontal">
-      <input type="text" ng-model="search" class="form-control" placeholder="Rechercher ..." autofocus>
+
+      <div class="form-group">
+        <label for="searchTitle" class="col-md-1">Titre</label>
+        <div class="col-md-11">
+        <input id="searchTitle" type="text" ng-model="search.title" class=" form-control" placeholder="Title ..." autofocus>
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="searchTeasing" class="col-md-1">Teasing</label>
+        <div class="col-md-11">
+      <input id="searchTeasing" type="text" ng-model="search.teasing" class="form-control" placeholder="Teasing ...">
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="searchSummary" class="col-md-1">Titre</label>
+        <div class="col-md-11">
+      <input id="searchSummary" type="text" ng-model="search.summary" class="form-control" placeholder="Summary ...">
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="searchDateBegin" class="col-md-1">Date&nbsp;début</label>
+        <div class="col-md-5">
+      <input id="dateBegin" type="text" ng-model="search.dateBegin" class="form-control" placeholder="dateBegin ...">
+    </div>
+        <label for="searchDateEnd" class="col-md-1">Date&nbsp;début</label>
+        <div class="col-md-5">
+      <input id="searchDateEnd" type="text" ng-model="search.dateEnd" class="form-control" placeholder="dateEnd ...">
+    </div>
+      </div>
+      <div class="form-group">
       <div class="text-right">
         <a class="btn btn-default" href="/#/edit-event">Ajouter</a>
+      </div>
       </div>
     </form>
   </div>
   <h4>
-    <ng-pluralize count="events.length"
+    <ng-pluralize count="(events | filter : search ).length"
                   when="{'0'    : 'Aucun événement trouvé. :-(',
                          'one'  : '1 événement trouvé !',
                          'other': '{} événements trouvés !'}">

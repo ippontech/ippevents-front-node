@@ -1,10 +1,14 @@
 'use strict';
 
-app.controller('EventsCtrl', function ($scope, $location, Events) {
+app.controller('EventsCtrl', function ($scope, $location, $filter, Events) {
 
   // Récupérations des événements
   Events.fetch().success(function(resp){
-    $scope.events = resp;
+    // console.log("$scope.search=" + $scope.search);
+    // if ($scope.search)
+    //   $scope.events = $filter('filter')(resp, $scope.search);
+    // else 
+      $scope.events = resp;
   });
 
   // fonction de création d'un événement
