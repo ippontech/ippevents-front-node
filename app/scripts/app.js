@@ -4,6 +4,7 @@ var app = angular.module('ippeventsApp', [
   'homeServices',
   'connectionServices',
   'eventsServices',
+  'performancesServices',
   'membersServices',
   'eventUI',
   'ngCookies']);
@@ -91,7 +92,7 @@ app.config(function ($routeProvider) {
     templateUrl: 'views/add-performance.html',
     controller: 'AddPerformanceCtrl'
   })
-  .when('/event/:idEvent/performance/:idPerf', {
+  .when('/performance/:id', {
     templateUrl: 'views/performance.html',
     controller: 'PerformanceCtrl'
   })

@@ -31,7 +31,7 @@
     <li ng-repeat="performance in event.performances | filter : search">
       <article class="row">
         <div class="col-sm-8">
-          <a href="/#/event/{{event._id}}/performance/{{performance._id}}">{{performance.title}}</a>
+          <a href="/#/performance/{{performance._id}}">{{performance.title}}</a>
         </div>
         <div class="col-sm-4">
 <!--           {{session.speaker.firstname}}

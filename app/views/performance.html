@@ -1,7 +1,56 @@
-<section class="container">
+<div class="bg-secondary">
+  <div class="container">
+    <h1>{{performance.title}}</h1>
+  </div>
+</div>
 
-	<div class="row">
-		<h4 class="title">{{performance.title}}</h4>
-	</div>
+<section class="container">
+<!--	
+  <div class="well well-complementary">
+    <form name="searchForm" class="form-horizontal">
+      <input type="text" ng-model="search" class="form-control" placeholder="Rechercher ..." autofocus>
+    </form>
+  </div>
+-->
+
+    <div class="row event">
+
+      
+      <div class="col-sm-8 main">
+      <label class="col-lg-2 control-label">
+        Durée :
+      </label>
+      <div class="col-lg-10">
+        {{performance.timebox}}
+        </div>
+</div>
+</div>
+<div class="row event">
+      <div class="col-sm-8 main">
+      <label class="col-lg-2 control-label">
+        Format :
+      </label>
+      <div class="col-lg-10">
+        {{performance.format}}
+        </div>
+      </div>
+    </div>
+
+
+  <h2>Les speakers</h2>
+
+	<div class="col-lg-12">
+	    <ul class="list-unstyled list-member">
+	      <li ng-repeat="speaker in performance.speakers">
+	        <div class="row">
+	          <div class="col-lg-6">
+	            <h4>{{speaker.firstname}} {{speaker.lastname}}</h4>
+	            <p>{{speaker.email}}</p>
+	          </div>
+	         
+	        </div>
+	      </li>
+	    </ul>
+	  </div>
 
 </section>

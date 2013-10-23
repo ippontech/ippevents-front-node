@@ -63,6 +63,10 @@ angular.module('eventsServices', []).factory('Events', function($http) {
 
 });
 
+angular.module('performancesServices', ['ngResource']).factory('Performance', function($resource) {
+    return $resource('/scripts/services/performance.json');
+})
+
 // angular.module('membersServices', ['ngResource'])
 // .factory('Members', function($resource) {
 //   return $resource('/scripts/services/members.json');

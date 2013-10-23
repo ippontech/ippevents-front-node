@@ -1,26 +1,31 @@
 'use strict';
 
 angular.module('ippeventsApp')
-  .controller('PerformanceCtrl', function ($scope, $routeParams, $log, Events) {
-    var idEvent = $routeParams.idEvent;
-    $log.log("idEvent " + idEvent);
-    var idPerf = $routeParams.idPerf;
-    $log.log("idPerf " + idPerf);
+  .controller('PerformanceCtrl', function ($scope, $routeParams, Performance) {
+    // var id = $routeParams.id;
+    // var performance = Performance.query();
+    // $scope.performance = performance;
+    // console.log("performance = " + JSON.stringify (performance));
 
-    if (undefined != idEvent) {
-    Events.fetchOne(idEvent)
-    .success(function(resp){
-    	$log.log(resp);
-      var event = resp;
-      event.performances.forEach(function(perf, i) {
-      	if (perf._id == idPerf) {
-      		$log.log("FOUND");
-      		$scope.performance = perf;
-      	}
-      });
-    })
-    .error(function(resp){
-      console.log(resp);
-    });
-  }
+    $scope.performance = {
+  "id" : "2",
+  "title" : "Let's sketch !",
+  "format" : "Atelier",
+  "timebox" : "2h",
+  "status" : "approved",        
+  "speakers" :
+    [
+      {
+        "id" : "1",
+        "firstname" : "Alvin",
+        "lastname" : "Berthelot",
+        "email" : "aberthelot@ippon.fr"
+      },
+      {
+        "id" : "2",
+        "firstname" : "Matt",
+        "lastname" : "Groening"
+      }
+    ]
+};
 });
