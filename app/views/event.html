@@ -31,7 +31,7 @@
     <li ng-repeat="performance in event.performances | filter : search">
       <article class="row">
         <div class="col-sm-8">
-          {{performance.title}}
+          <a href="/#/performance/{{event._id}}/{{performance._id}}">{{performance.title}}</a>
         </div>
         <div class="col-sm-4">
 <!--           {{session.speaker.firstname}}
@@ -41,7 +41,7 @@
     </li>
   </ul>
 
-    <ul class="list-unstyled">
+  <ul class="list-unstyled">
     <li ng-repeat="a in event.address">
       <div class="row">
         <div class="col-sm-8">
