@@ -1,8 +1,11 @@
 'use strict';
 
-app.controller('AddPerformanceCtrl', function ($scope, $location, $routeParams, Events) {
+app.controller('AddPerformanceCtrl', function ($scope, $location, $routeParams, Events, $log) {
 
   var id = $routeParams.id;
+
+  $scope.performance = {};
+  $scope.newspeaker = {};
 
   if (undefined != id) {
     Events.fetchOne(id)
@@ -27,9 +30,9 @@ app.controller('AddPerformanceCtrl', function ($scope, $location, $routeParams, 
   // };
 
   // fonction de création
-  $scope.createPerformance = function(performance) {
+  $scope.createPerformance = function() {
     
-    $scope.event.performances.push(performance);
+    $scope.event.performances.push($scope.performance);
     
     Events.update($scope.event)
     .success(function(){
@@ -41,6 +44,16 @@ app.controller('AddPerformanceCtrl', function ($scope, $location, $routeParams, 
     });
 
 
+  };
+
+  $scope.addSpeaker = function() {
+    $log.log('addSpeaker');
+    if (!$scope.performance.speakers) {
+      $scope.performance.speakers = [];
+    }
+    $scope.performance.speakers.push($scope.newspeaker);
+    $scope.newspeaker = {};
+    return false;
   };
 
 });
