@@ -4,6 +4,7 @@ var app = angular.module('ippeventsApp', [
   'homeServices',
   'connectionServices',
   'eventsServices',
+  'performancesServices',
   'membersServices',
   'personsServices',
   'eventUI',
