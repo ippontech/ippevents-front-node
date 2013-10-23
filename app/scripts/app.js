@@ -6,6 +6,7 @@ var app = angular.module('ippeventsApp', [
   'eventsServices',
   'membersServices',
   'eventUI',
+  'calendar-ui',
   'ngCookies']);
 
 app.config(function($httpProvider) {

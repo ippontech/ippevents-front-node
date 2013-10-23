@@ -17,7 +17,8 @@
         <span ng-show="eventForm.inputDateBegin.$error.required" class="label-form-error"> obligatoire !</span>
       </label>
       <div class="col-lg-4">
-        <input type="text" ng-model="event.dateBegin" required class="form-control" name="inputDateBegin">
+        <!--input type="text" ng-model="event.dateBegin" required class="form-control" name="inputDateBegin"-->
+        <calendar value="event.dateBegin" name="inputDateBegin" />
       </div>
       <label for="dateEnd" class="col-lg-2 control-label">
         Date de fin
