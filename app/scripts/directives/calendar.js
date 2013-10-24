@@ -5,11 +5,12 @@ angular.module('calendar-ui', []).
   	return {
       restrict: 'E',
       scope: {
-      	value: '=',
+        value: '=',
+        format: '=',
       	name: '@'
       },
       controller: function($scope, $element) {
-	    jQuery($element).datepicker();
+	      jQuery($element).datepicker();
       },
       template: '<input type="text" ng-model="value" required class="form-control" name="{{name}}">',
       replace: true

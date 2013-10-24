@@ -8,6 +8,8 @@ app.controller('EditEventCtrl', function ($scope, $location, $routeParams, Event
     Events.fetchOne(id)
     .success(function(resp){
       $scope.event = resp;
+      $scope.event.dateBegin = new Date($scope.event.dateBegin);
+      $scope.event.dateEnd = new Date($scope.event.dateEnd);
     })
     .error(function(resp){
       console.log(resp);
