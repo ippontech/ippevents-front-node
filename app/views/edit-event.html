@@ -49,7 +49,7 @@
       </div>
     </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-primary" ng-disabled="eventForm.$invalid" ng-show="!event._id" ng-click="createEvent(event)">Ajouter</button>
+      <button type="submit" class="btn btn-primary"  ng-show="!event._id" ng-click="createEvent(event)">Ajouter</button>
       <a class="btn btn-warning" href="/#/events" ng-show="event._id" ng-click="active='events'">Annuler</a>
       <button type="submit" class="btn btn-primary" ng-disabled="eventForm.$invalid" ng-show="event._id" ng-click="updateEvent(event)">Modifier</button>
     </div>

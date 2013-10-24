@@ -14,4 +14,8 @@ app.controller('PerformanceCtrl', function ($scope, $location, $routeParams, Eve
     });
   }
 
+  // redirection vers la page d'édition
+  $scope.gotoUpdatePerformance = function(index){
+    $location.path("/event/" + eventId + '/edit-performance/' + id);
+  };
 });

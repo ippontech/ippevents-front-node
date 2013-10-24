@@ -2,7 +2,7 @@
 
 app.controller('AddPerformanceCtrl', function ($scope, $location, $routeParams, Events, $log) {
 
-  var id = $routeParams.id;
+  var id = $routeParams.event_id;
 
   $scope.performance = {};
   $scope.newspeaker = {};

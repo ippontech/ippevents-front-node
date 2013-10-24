@@ -98,11 +98,11 @@ app.config(function ($routeProvider) {
     templateUrl: 'views/event.html',
     controller: 'EventCtrl'
   })
-  .when('/edit-performance', {
+  .when('/event/:event_id/edit-performance/:performance_id', {
     templateUrl: 'views/edit-performance.html',
     controller: 'EditPerformanceCtrl'
   })
-  .when('/add-performance/:id', {
+  .when('/add-performance/:event_id', {
     templateUrl: 'views/add-performance.html',
     controller: 'AddPerformanceCtrl'
   })

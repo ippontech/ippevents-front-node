@@ -1,10 +1,45 @@
 'use strict';
 
-angular.module('ippeventsApp')
-  .controller('EditSessionCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+app.controller('EditPerformanceCtrl', function ($scope, $location, $routeParams, Events) {
+
+  var eventId = $routeParams.event_id;
+  var performance_id = $routeParams.performance_id;
+
+  if (undefined !== eventId && undefined !== performance_id) {
+    Events.fetchOne(eventId)
+    .success(function(resp){
+      $scope.event = resp;
+      $scope.performance = resp.performances.reduce(function(prev, current){
+        return (current._id === performance_id)? current: prev;
+      });
+    })
+    .error(function(resp){
+      console.log(resp);
+    });
+  }
+
+
+  // fonction de modification
+  $scope.updatePerformance = function(performance){
+
+    Events.update($scope.event)
+    .success(function(){
+      $location.path( "/event/" + $scope.event._id);
+    })
+    .error(function(resp){
+      console.log(resp);
+      // affichage d'un message d'erreur
+      });
+  };
+
+
+
+  $scope.addSpeaker = function() {
+    if (!$scope.performance.speakers) {
+      $scope.performance.speakers = [];
+    }
+    $scope.performance.speakers.push($scope.newspeaker);
+    $scope.newspeaker = {};
+    return false;
+  };
+});
