@@ -110,6 +110,10 @@ app.config(function ($routeProvider) {
     templateUrl: 'views/performance.html',
     controller: 'PerformanceCtrl'
   })
+  .when('/event/:event_id/performance/:performance_id/inscription', {
+    templateUrl: 'views/edit-person.html',
+    controller: 'EditPerformanceCtrl'
+  })
   .otherwise({
     redirectTo: '/'
   });

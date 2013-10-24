@@ -12,6 +12,7 @@ app.controller('EditPerformanceCtrl', function ($scope, $location, $routeParams,
       $scope.performance = resp.performances.reduce(function(prev, current){
         return (current._id === performance_id)? current: prev;
       });
+      $scope.person = {};
     })
     .error(function(resp){
       console.log(resp);
@@ -32,7 +33,21 @@ app.controller('EditPerformanceCtrl', function ($scope, $location, $routeParams,
       });
   };
 
-
+ $scope.addPerson = function() {
+    if (!$scope.performance.persons){
+      $scope.performance.persons = [];
+    }
+    $scope.performance.persons.push($scope.person);
+    
+    Events.update($scope.event)
+    .success(function(){
+      $location.path("/event/" + eventId + '/performance/' + performance_id);
+      })
+      .error(function(resp){
+    console.log(resp);
+    // affichage d'un message d'erreur
+    });
+  };
 
   $scope.addSpeaker = function() {
     if (!$scope.performance.speakers) {

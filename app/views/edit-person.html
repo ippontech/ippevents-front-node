@@ -8,7 +8,7 @@
         <span ng-show="personForm.inputFirstname.$error.required" class="label-form-error"> obligatoire !</span>
       </label>
       <div class="col-lg-10">
-        <input type="text" ng-model="person.first_name" required class="form-control" name="inputFirstname" placeholder="John">
+        <input type="text" ng-model="person.firstname" required class="form-control" name="inputFirstname" placeholder="John">
       </div>
     </div>
     <div class="form-group">
@@ -17,7 +17,7 @@
         <span ng-show="personForm.inputLastname.$error.required" class="label-form-error"> obligatoire !</span>
       </label>
       <div class="col-lg-10">
-        <input type="text" ng-model="person.last_name" required class="form-control" name="inputLastname" placeholder="Doe">
+        <input type="text" ng-model="person.lastname" required class="form-control" name="inputLastname" placeholder="Doe">
       </div>
     </div>
     <div class="form-group">
@@ -31,9 +31,10 @@
       </div>
     </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-primary" ng-disabled="personForm.$invalid" ng-show="!person._id" ng-click="createPerson(person)">Ajouter</button>
+      <button class="btn btn-primary text-right" ng-click="addPerson()"><i class="icon-edit icon-white"></i> Ajouter</button>
+     <!--  <button type="submit" class="btn btn-primary" ng-disabled="personForm.$invalid" ng-show="!person._id" ng-click="createPerson(person)">Ajouter</button>
       <a class="btn btn-warning" href="/#/person" ng-show="person._id" ng-click="active='person'">Annuler</a>
-      <button type="submit" class="btn btn-primary" ng-disabled="personForm.$invalid" ng-show="person._id" ng-click="updatePerson(person)">Modifier</button>
+      <button type="submit" class="btn btn-primary" ng-disabled="personForm.$invalid" ng-show="person._id" ng-click="updatePerson(person)">Modifier</button>-->
     </div>
   </form>
 </section>
