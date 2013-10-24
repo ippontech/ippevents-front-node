@@ -109,11 +109,16 @@ angular.module('membersServices', []).factory('Members', function($http) {
 angular.module('speakersServices', []).factory('Speakers', function($http) {
     
     var API_URI = SERVICES_URI + '/findAllSpeakers';
+    var API_URI_PERFORMANCES = SERVICES_URI + '/getPerformancesBySpeaker/';
     
     return {
 
         fetch : function() {
             return $http.get(API_URI);
+        },
+
+        findPerformances : function(firstname, lastname) {
+            return $http.get(API_URI_PERFORMANCES + lastname + '/' + firstname);
         }
 
    };

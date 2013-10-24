@@ -120,6 +120,10 @@ app.config(function ($routeProvider) {
     templateUrl: 'views/speakers.html',
     controller: 'SpeakersCtrl'
   })
+  .when('/getPerformancesBySpeaker/:nom/:prenom', {
+    templateUrl: 'views/performancesBySpeaker.html',
+    controller: 'PerformancesSpeakerCtrl'
+  })
   .otherwise({
     redirectTo: '/'
   });
