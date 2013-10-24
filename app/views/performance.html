@@ -2,9 +2,29 @@
 
     <div class="row">
       <div class="col-sm-12 main well">
-        <h4 class="title">{{performance.title}}</h4>
-        <p>{{performance.description}}</p>
-        <p>{{performance.timebox}}</p>
+        <div class="row">
+            <div class="bg-secondary">
+        <div class="container">
+            <h2>
+            {{performance.title}}
+            </h2>
+        </div>
+    </div>
+        </div>
+        <div class="row">
+        <div class="col-sm-4">
+            <p class="date bg-performance">
+                <i class="icon-chevron-right"></i> DESCRIPTION
+            </p>
+            <p>{{performance.description}}</p>
+            <p class="date bg-performance">
+                <i class="icon-chevron-right"></i> DUREE
+            </p>
+            <p>{{performance.timebox}}</p>
+        </div>
+
+
+        <div class="col-sm-8">
 
         <h5>Speakers :</h5>
         <div ng-repeat="speaker in performance.speakers">
@@ -18,8 +38,10 @@
             <p>{{person.firstname}} {{person.lastname}}</p>
         </div>
         <button class="btn btn-primary text-right" ng-click="gotoUpdatePerformance()"><i class="icon-edit icon-white"></i> Modifier</button>
-        <button class="btn btn-primary text-right" ng-click="gotoInscriptionPerfomance()"><i class="icon-chevron-right icon-white"></i><i class="icon-chevron-right icon-white"></i> Inscription</button>
+    
+        </div>
       </div>
+  </div>
     </div>
 
 </section>
