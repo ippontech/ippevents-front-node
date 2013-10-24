@@ -18,4 +18,8 @@ app.controller('PerformanceCtrl', function ($scope, $location, $routeParams, Eve
   $scope.gotoUpdatePerformance = function(index){
     $location.path("/event/" + eventId + '/edit-performance/' + id);
   };
+
+    $scope.gotoInscriptionPerfomance = function(index){
+    $location.path("/event/" + eventId + '/performance/' + id + '/inscription');
+  };
 });
