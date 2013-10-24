@@ -1,0 +1,6 @@
+<div>
+	<h1>Orateurs</h1>
+	<ul>
+		<li ng-repeat="speaker in speakers | orderBy:'lastname'">{{speaker.firstname}} {{speaker.lastname}}</li>
+	</ul>
+</div>

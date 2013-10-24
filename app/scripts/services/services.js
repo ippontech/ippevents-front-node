@@ -106,6 +106,21 @@ angular.module('membersServices', []).factory('Members', function($http) {
 
 });
 
+angular.module('speakersServices', []).factory('Speakers', function($http) {
+    
+    var API_URI = SERVICES_URI + '/findAllSpeakers';
+    
+    return {
+
+        fetch : function() {
+            return $http.get(API_URI);
+        }
+
+   };
+
+});
+
+
 // angular.module('personServices', ['ngResource'])
 // .factory('Persons', function($resource) {
 //   return $resource('/scripts/services/persons.json');

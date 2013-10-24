@@ -7,6 +7,7 @@ var app = angular.module('ippeventsApp', [
   'performancesServices',
   'membersServices',
   'personsServices',
+  'speakersServices',
   'eventUI',
   'ui.date',
   'calendar-ui',
@@ -114,6 +115,10 @@ app.config(function ($routeProvider) {
   .when('/event/:event_id/performance/:performance_id/inscription', {
     templateUrl: 'views/edit-person.html',
     controller: 'EditPerformanceCtrl'
+  })
+  .when('/speakers', {
+    templateUrl: 'views/speakers.html',
+    controller: 'SpeakersCtrl'
   })
   .otherwise({
     redirectTo: '/'
