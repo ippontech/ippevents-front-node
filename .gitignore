@@ -3,8 +3,7 @@ dist
 .tmp
 .sass-cache
 bower_components
-.bowerrc
 .editorconfig
 .gitattributes
-.jshintrc
 .DS_Store
+app/vendor
