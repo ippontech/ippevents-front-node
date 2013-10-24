@@ -1,0 +1,99 @@
+
+
+<section class="container">
+
+    <div class="row event">
+      <div class="col-sm-4 text-center">
+        <img src="{{event.picture}}" alt="{{event.title}}"
+        class="img-responsive" />
+      </div>
+      <div class="col-sm-8 main">
+        <p class="date">{{event.dateBegin | date:'fullDate'}} <i class="icon-chevron-right icon-white"></i> {{event.dateEnd | date:'fullDate'}}</p>
+        <h4 class="title">{{event.title}}</h4>
+        <p class="teasing">{{event.teasing}}</p>
+      </div>
+    </div>
+
+
+  <h2>Les Performances</h2>
+
+  <div class="text-right">
+    <a class="btn btn-default" href="/#/add-performance/{{event._id}}">Ajouter une session</a>
+  </div>
+
+  <div class="well well-complementary">
+    <!-- formulaire de recherche -->
+    <form name="searchForm" class="form-horizontal">
+      
+      <label>Recherche sur le titre : </label>
+      <input type="text" ng-model="search.title" class="form-control" placeholder="Rechercher titre..." autofocus>
+      
+      <a href="" ng-click="toggle = !toggle">Recherche avancée</a>
+        <ul ng-show="toggle" class="list-unstyled list-member">
+          <!--
+          <li>
+            <label>Recherche sur le titre : </label>
+            <input type="text" ng-model="search.title" class="form-control" placeholder="Rechercher titre ..." autofocus>
+          </li>
+        -->
+          <li>
+            <label>Recherche sur la description : </label>
+            <input type="text" ng-model="search.description" class="form-control" placeholder="Rechercher description..." autofocus>
+          </li>
+      </ul>
+
+    </form>
+  </div>
+
+  <ul class="list-unstyled list-light">
+    <li>
+      <article class="row">
+        <div class="col-sm-8">
+          TITRE
+        </div>
+        <div class="col-sm-4">
+          DESCRIPTION
+        </div>
+      </article>
+    </li>
+    <li ng-repeat="performance in event.performances | filter : search">
+      <article class="row">
+        <div class="col-sm-8">
+          <a href="/#/event/{{event._id}}/performance/{{performance._id}}">{{performance.title}}</a>
+        </div>
+        <div class="col-sm-4">
+          {{performance.description}}
+<!--           {{session.speaker.firstname}}
+          {{session.speaker.name}} -->
+        </div>
+      </article>
+    </li>
+  </ul>
+
+<!--
+  <ul class="list-unstyled list-light">
+    <li ng-repeat="performance in event.performances | filter : searchByDesc">
+      <article class="row">
+        <div class="col-sm-8">
+          <a href="/#/performance/{{event._id}}/{{performance._id}}">{{performance.description}}</a>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </article>
+    </li>
+  </ul>
+-->
+
+  <ul class="list-unstyled">
+    <li ng-repeat="a in event.address">
+      <div class="row">
+        <div class="col-sm-8">
+          {{a.title}}
+        </div>
+        <div class="col-sm-4">
+
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>

@@ -35,6 +35,10 @@ app.controller('EventsCtrl', function ($scope, $location, $filter, Events) {
       console.log(resp);
       // affichage d'un message d'erreur
     });
+   $scope.dateRangeSelector = function(event){
+	console.log('ALERT TEST');
+	});  
+
 };
 
   // redirection vers le détail

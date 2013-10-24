@@ -33,7 +33,7 @@
       <div class="form-group">
         <label for="searchDateBegin" class="col-md-1">Date&nbsp;début</label>
         <div class="col-md-5">
-      <input id="dateBegin" type="text" ng-model="search.dateBegin" class="form-control" placeholder="dateBegin ...">
+      <input id="dateBegin" type="text" ng-keyup="" ng-model="search.dateBegin" class="form-control" placeholder="dateBegin ...">
     </div>
         <label for="searchDateEnd" class="col-md-1">Date&nbsp;début</label>
         <div class="col-md-5">

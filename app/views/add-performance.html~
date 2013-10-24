@@ -1,0 +1,49 @@
+<section ng-controller="EditEventCtrl" class="container">
+  <h1>{{event.title}}</h1>
+  <h2>Ajouter une session</h2>
+  <form name="performanceForm" class="form-horizontal">
+    <div class="form-group">
+      <label for="inputTitle" class="col-lg-3 control-label">
+        Titre
+        <span ng-show="performanceForm.inputTitle.$error.required" class="label-form-error"> obligatoire !</span>
+      </label>
+      <div class="col-lg-9">
+        <input type="text" ng-model="performance.title" required class="form-control" name="inputTitle" placeholder="Ippsession">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputDescription" class="col-lg-3 control-label">
+        Description
+        <span ng-show="performanceForm.inputDescription.$error.required" class="label-form-error"> obligatoire !</span>
+      </label>
+      <div class="col-lg-9">
+        <textarea ng-model="performance.description" required class="form-control" name="inputDescription"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="iputTimeBox" class="col-lg-3 control-label">Durée (en minutes)</label>
+      <div class="col-lg-9">
+        <input type="text" ng-model="performance.timebox" required class="form-control" placeholder="Durée de la session">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="iputTimeBox" class="col-lg-3 control-label">Status</label>
+      <div class="col-lg-9">
+        <input type="text" ng-model="performance.status" required class="form-control" placeholder="Status">
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" ng-model="newspeaker.firstname" placeholder="Prénom"></input>
+      <input type="text" ng-model="newspeaker.lastname" placeholder="Nom"></input>
+      <button class="btn btn-primary" ng-click="addSpeaker()">Ajouter orateur</button>
+      <div ng-repeat="speaker in performance.speakers">
+       <span>{{speaker.firstname}} {{speaker.lastname}}</span>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" ng-disabled="performanceForm.$invalid" ng-click="createPerformance()">Ajouter</button>
+      <a class="btn btn-warning" href="/#/event/{{event._id}}">Annuler</a>
+    </div>
+  </form>
+</section>
+
