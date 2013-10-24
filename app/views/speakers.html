@@ -1,0 +1,6 @@
+<div>
+	<h1>Orateurs</h1>
+	<ul>
+		<li ng-repeat="speaker in speakers | orderBy:'lastname'"><a href="#/getPerformancesBySpeaker/{{speaker.lastname}}/{{speaker.firstname}}">{{speaker.firstname}} {{speaker.lastname}}</a></li>
+	</ul>
+</div>
