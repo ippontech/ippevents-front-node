@@ -2,8 +2,6 @@
 // Définitions des mixins propres au thème
 ////////////////////////////////////////////////////////////////////////
 
-@import "variables.scss";
-
 @mixin event-horizontal-gap() {
   border-bottom: 2px dashed $gray-lighter;
   padding-bottom: 20px;

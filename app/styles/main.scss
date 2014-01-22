@@ -5,18 +5,25 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 // Définitions des imports
 ////////////////////////////////////////////////////////////////////////
 
-@import "variables.scss";
-
-@import "buttons.scss";
 @import "fonts.scss";
-@import "grids.scss";
-@import "jumbotron.scss";
+@import "variables.scss";
 @import "mixins.scss";
+
+
+@import "../vendor/bootstrap-sass/lib/bootstrap";
+@import "../vendor/bootstrap-sass/lib/responsive";
+
+
+
+@import "ippevents-mixins.scss";
+
+// @import "buttons.scss";
+// @import "grids.scss";
+@import "jumbotron.scss";
 @import "type.scss";
 @import "wells.scss";
 @import "datepicker.css";
 
-@import "ippevents-mixins.scss";
 
 
 /* Put your CSS here */
