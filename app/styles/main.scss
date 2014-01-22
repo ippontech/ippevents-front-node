@@ -5,13 +5,14 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 // Définitions des imports
 ////////////////////////////////////////////////////////////////////////
 
+@import "variables.scss";
+
 @import "buttons.scss";
 @import "fonts.scss";
 @import "grids.scss";
 @import "jumbotron.scss";
 @import "mixins.scss";
 @import "type.scss";
-@import "variables.scss";
 @import "wells.scss";
 @import "datepicker.css";
 

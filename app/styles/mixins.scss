@@ -2,8 +2,6 @@
 // Définitions des mixins (cf. https://github.com/jlong/sass-bootstrap)
 ////////////////////////////////////////////////////////////////////////
 
-@import "variables.scss";
-
 @mixin margin($margin) {
   margin: $margin;
 }
