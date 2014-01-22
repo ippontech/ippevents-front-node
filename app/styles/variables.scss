@@ -8,7 +8,8 @@
 // -------------------------
 
 $black: #000;
-$white: #fff;
+// $white: #fff;
+$white: gray;
 $gray: lighten(#000, 50%); // #c0c0c0
 $gray-lighter: lighten(#000, 90%);
 $gray-lightest: lighten(#000, 95%);
