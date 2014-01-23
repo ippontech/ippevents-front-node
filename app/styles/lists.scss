@@ -1,0 +1,16 @@
+ul {
+	&.liste-standard { 
+		@include alternate-list($list-light-even-background-color, $list-light-odd-background-color);
+	}
+
+	&.list-member {
+		@include alternate-list($ippon-primary, $ippon-secondary);
+	}
+
+
+	@each $classe in liste-standard, list-member {
+		&.#{$classe}, &.#{$classe} h4 {
+			text-decoration: underline;
+		}
+	}
+}

@@ -132,3 +132,17 @@
     }
   }
 }
+
+@mixin alternate-list($evenColor, $oddColor) {
+  li {
+    list-style:none;
+    &:nth-child(even) {
+      border-left: 10px solid darken($evenColor, 25%);
+      background-color: $evenColor;
+    }
+    &:nth-child(odd) {
+      border-left: 10px solid darken($oddColor, 25%);
+      background-color: $oddColor;
+    }
+  }
+}
