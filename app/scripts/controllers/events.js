@@ -8,6 +8,12 @@ app.controller('EventsCtrl', function ($scope, $location, $filter, Events) {
       $scope.search.dateEnd = newVal;
     }
   })
+  $scope.$watch('search.dateEnd', function(newVal, oldVal) {
+    if ($scope.search != null
+       && ($scope.search.dateBegin == null || $scope.search.dateEnd < $scope.search.dateBegin)) {
+      $scope.search.dateBegin = newVal;
+    }
+  })
 
   // Récupérations des événements
   Events.fetch().success(function(resp){
