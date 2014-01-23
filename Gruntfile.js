@@ -46,7 +46,7 @@ module.exports = function (grunt) {
           livereload: LIVERELOAD_PORT
         },
         files: [
-          '<%= yeoman.app %>/doc/**/*.html',
+          '<%= yeoman.app %>/docs/**/*.html',
           '<%= yeoman.app %>/{,*/}*.html',
           '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
           '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
@@ -55,7 +55,7 @@ module.exports = function (grunt) {
       },
       doc: {
         files: ['Gruntfile.js', '<%= yeoman.app %>/scripts/**/*.js'],
-        tasks: ['jsdoc']
+        tasks: ['docco']
       }
     },
     connect: {
@@ -332,28 +332,14 @@ module.exports = function (grunt) {
       }
     },
 
-    // ### Options for grunt-groc module
-    groc: {
-      javascript: [
-        "app/scripts/**/*.js",
-        // "./README.md",
-        "./Gruntfile.js"
-      ],
-      options: {
-        "out": "doc/"
-      }
-    },
-
-    /**
-     * grunt-jsdoc configuration
-     */
-    jsdoc : {
-        dist : {
-            src: ["app/scripts/**/*.js"], 
-            options: {
-                destination: 'doc'
-            }
+    // ### grunt-doco configuration
+    docco: {
+      debug: {
+        src: ['app/scripts/**/*.js'],
+        options: {
+          output: 'docs/'
         }
+      }
     }
   });
 

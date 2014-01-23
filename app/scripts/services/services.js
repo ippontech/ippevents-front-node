@@ -48,6 +48,9 @@ angular.module('eventsServices', []).factory('Events', function($http) {
     
     return {
 
+        /**
+         * Fetch function.
+         */
         fetch : function() {
             return $http.get(API_URI);
         },
