@@ -55,13 +55,11 @@
                          'other': '{} événements trouvés !'}">
     </ng-pluralize>
   </h4>
-cou
   <ul class="list-unstyled list-event">
     <li ng-repeat="event in events | filter : search | orderBy:predicate:reverse">
       <event/>
     </li>
   </ul>
-cou
 
 
 <!-- 
