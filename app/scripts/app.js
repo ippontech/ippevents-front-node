@@ -9,6 +9,7 @@ var app = angular.module('ippeventsApp', [
   'personsServices',
   'speakersServices',
   'eventUI',
+  'people-ui',
   'ui.date',
   'calendar-ui',
   'ngCookies']);
