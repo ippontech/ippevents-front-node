@@ -46,11 +46,16 @@ module.exports = function (grunt) {
           livereload: LIVERELOAD_PORT
         },
         files: [
+          '<%= yeoman.app %>/doc/**/*.html',
           '<%= yeoman.app %>/{,*/}*.html',
           '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
           '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
+      },
+      doc: {
+        files: ['Gruntfile.js', '<%= yeoman.app %>/scripts/**/*.js'],
+        tasks: ['jsdoc']
       }
     },
     connect: {
@@ -325,6 +330,30 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+
+    // ### Options for grunt-groc module
+    groc: {
+      javascript: [
+        "app/scripts/**/*.js",
+        // "./README.md",
+        "./Gruntfile.js"
+      ],
+      options: {
+        "out": "doc/"
+      }
+    },
+
+    /**
+     * grunt-jsdoc configuration
+     */
+    jsdoc : {
+        dist : {
+            src: ["app/scripts/**/*.js"], 
+            options: {
+                destination: 'doc'
+            }
+        }
     }
   });
 
@@ -360,7 +389,8 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'rev',
-    'usemin'
+    'usemin',
+    'groc'
   ]);
 
   grunt.registerTask('default', [

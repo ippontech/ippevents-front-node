@@ -1,19 +1,27 @@
-
+/** Global services */
 // services local
 var SERVICES_URI = 'http://localhost:3000';
 // services Heroku cloud
 // var SERVICES_URI = 'http://ippevents-services-node.herokuapp.com';
 
-angular.module('connectionServices', []).factory('Connections', function($http) {
+/** Initialisation of connection services. */
+ angular.module('connectionServices', []).factory('Connections', function($http) {
 
     var API_URI = SERVICES_URI + '/';
 
     return {
 
+        /**
+         * Logout function.
+         */
         logout : function() {
             return $http.get(API_URI + 'logout');
         },
 
+        /**
+         * Login function.
+         * @param {string} user - The user object
+         */
         login : function(user) {
         var payload = $.param({username: user.login, password: user.password});
         var config = {
@@ -29,6 +37,7 @@ angular.module('connectionServices', []).factory('Connections', function($http) 
 
 });
 
+/** Initialisation of home services. */
 angular.module('homeServices', ['ngResource']).factory('Home', function($resource) {
   return $resource('/scripts/services/website.json');
 });

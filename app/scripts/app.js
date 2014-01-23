@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ * Main app module
+ */
 var app = angular.module('ippeventsApp', [
   'homeServices',
   'connectionServices',
@@ -13,6 +16,9 @@ var app = angular.module('ippeventsApp', [
   'calendar-ui',
   'ngCookies']);
 
+/**
+ * Youpi tralalalala
+ */
 app.config(function($httpProvider) {
   $httpProvider.defaults.withCredentials = true;
   var interceptor = ['$rootScope','$q', function(scope, $q) {
