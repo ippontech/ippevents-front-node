@@ -18,6 +18,13 @@ app.controller('EditEventCtrl', function ($scope, $location, $routeParams, Event
 
   // fonction de modification
   $scope.updateEvent = function(event){
+    $scope.event.dateBegin = new Date($scope.event.dateBegin);
+    $scope.event.dateEnd = new Date($scope.event.dateEnd);
+    
+        if($scope.event.dateEnd < $scope.event.dateBegin) {
+            $scope.event.dateEnd = '';
+        };
+  console.log("Un petit log");
     Events.update(event)
     .success(function(){
       $location.path( "/events" );

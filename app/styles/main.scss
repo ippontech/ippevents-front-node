@@ -14,6 +14,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 @import "variables.scss";
 @import "wells.scss";
 @import "datepicker.css";
+@import "fontello.css";
 
 @import "ippevents-mixins.scss";
 
@@ -236,5 +237,10 @@ list-event, .list-event {
   h1, h2, h3, h4, h5, h6 {
       background-color: $ippon-primary;
       color: $white;
+  }
+}
+h1 {
+  @include title-sm {
+    color: blue;
   }
 }
