@@ -24,6 +24,40 @@ app.controller('EventsCtrl', function ($scope, $location, $filter, Events) {
       $scope.events = resp;
   });
 
+  $scope.filterEventFunc = function(eventElt) {
+
+    if (!$scope.search) {
+      return true;
+    }
+
+    /* TODO
+      If $ is the only field, search on every field with this field.
+    */
+
+    if ($scope.search.summary 
+      && eventElt.summary.indexOf($scope.search.summary) == -1) {
+      return false;
+    }
+    if ($scope.search.teasing 
+      && eventElt.teasing.indexOf($scope.search.teasing) == -1) {
+      return false;
+    }
+    if ($scope.search.$
+      && eventElt.title.indexOf($scope.search.$) == -1) {
+      return false;
+    }
+
+    // TODO bugged
+    if ($scope.search.dateEnd
+      && $scope.search.dateBegin
+      && eventElt.dateBegin > new Date($scope.search.dateEnd)
+      && eventElt.dateEnd < new Date($scope.search.dateBegin)) {
+      return false;
+    }
+
+
+    return true;
+  };
   // fonction de création d'un événement
   $scope.createEvent = function(event){
 

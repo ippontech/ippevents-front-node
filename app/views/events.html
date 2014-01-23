@@ -50,7 +50,7 @@
     </form>
   </div>
   <h4>
-    <ng-pluralize count="(events | filter : search ).length"
+    <ng-pluralize count="(events | filter : filterEventFunc ).length"
                   when="{'0'    : 'Aucun événement trouvé. :-(',
                          'one'  : '1 événement trouvé !',
                          'other': '{} événements trouvés !'}">
@@ -58,7 +58,7 @@
   </h4>
 
   <ul class="list-unstyled list-event">
-    <li ng-repeat="event in events | filter : search | orderBy:predicate:reverse">
+    <li ng-repeat="event in events | filter : filterEventFunc | orderBy:predicate:reverse">
       <div class="row">
         <div class="col-sm-4">
           <p class="date">
