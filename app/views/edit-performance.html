@@ -26,11 +26,19 @@
       </div>
     </div>
     <div class="form-group">
-      <input type="text" ng-model="newspeaker.firstname" placeholder="Prénom"></input>
+
+      <label for="inputFirstname" class="col-lg-3 control-label">
+        Prénom
+        <span ng-show="performanceForm.inputFirstname.$error.required" class="label-form-error"> obligatoire !</span>
+      </label>
+
+      <input type="text" name="inputFirstname" required ng-model="newspeaker.firstname" placeholder="Prénom"></input>
       <input type="text" ng-model="newspeaker.lastname" placeholder="Nom"></input>
+      <input name="email" type="email" ng-model="newspeaker.email" placeholder="jondoe@ippon"></input>
+      <input type="text" ng-model="newspeaker.twitter" placeholder="@jondoe"></input>
       <button class="btn btn-primary" ng-click="addSpeaker()">Ajouter orateur</button>
       <div ng-repeat="speaker in performance.speakers">
-       <span>{{speaker.firstname}} {{speaker.lastname}}</span>
+       <span>{{speaker.firstname}} {{speaker.lastname}} {{speaker.email}} {{speaker.twitter}}</span>
       </div>
     </div>
 
@@ -41,4 +49,3 @@
     </div>
   </form>
 </section>
-
