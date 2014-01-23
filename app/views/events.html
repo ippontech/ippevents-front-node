@@ -30,14 +30,15 @@
       <input id="searchSummary" type="text" ng-model="search.summary" class="form-control" placeholder="Summary ...">
       </div>
       </div>
+
       <div class="form-group">
-        <label for="searchDateBegin" class="col-md-1">Date&nbsp;début</label>
+        <label for="searchDateBegin" class="col-md-1">Date&nbsp;de&nbsp;début</label>
         <div class="col-md-5">
-      <input id="dateBegin" type="text" ng-model="search.dateBegin" class="form-control" placeholder="dateBegin ...">
+      <input ui-date id="dateBegin" type="text" ng-model="search.dateBegin" class="form-control" placeholder="dateBegin ...">
     </div>
-        <label for="searchDateEnd" class="col-md-1">Date&nbsp;début</label>
+        <label for="searchDateEnd" class="col-md-1">Date&nbsp;de&nbsp;fin</label>
         <div class="col-md-5">
-      <input id="searchDateEnd" type="text" ng-model="search.dateEnd" class="form-control" placeholder="dateEnd ...">
+      <input ui-date id="searchDateEnd" type="text" ng-model="search.dateEnd" class="form-control" placeholder="dateEnd ...">
     </div>
       </div>
       <div class="form-group">
