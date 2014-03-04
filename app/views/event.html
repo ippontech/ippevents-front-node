@@ -48,23 +48,32 @@
   <ul class="list-unstyled list-light">
     <li>
       <article class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-4">
           TITRE
         </div>
         <div class="col-sm-4">
           DESCRIPTION
         </div>
+        <div class="col-sm-4">
+          ORATEURS
+        </div>
       </article>
     </li>
     <li ng-repeat="performance in event.performances | filter : search">
       <article class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-4">
           <a href="/#/event/{{event._id}}/performance/{{performance._id}}">{{performance.title}}</a>
         </div>
         <div class="col-sm-4">
           {{performance.description}}
 <!--           {{session.speaker.firstname}}
           {{session.speaker.name}} -->
+        </div>
+         <div class="col-sm-4">
+          <li ng-repeat="speaker in performance.speakers">
+          <p ng-show="speaker.email">{{speaker.email}}     {{speaker.twitter}}</p>
+
+          </li>
         </div>
       </article>
     </li>
