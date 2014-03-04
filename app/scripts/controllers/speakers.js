@@ -27,6 +27,7 @@ app.controller('PerformancesSpeakerCtrl', function ($scope, $location, $routePar
 
 app.filter('toTwitterUrl', function() {
   return function(input) {
+    if (input != undefined && input.length > 0)
     return "https://twitter.com/" + input.substring(1);
   }
 });
