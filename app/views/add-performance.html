@@ -28,9 +28,18 @@
     </div>
     
     <div class="form-group">
-      <label for="inputInterest" class="col-lg-3 control-label">Note</label>
+      <label for="inputInterest" class="col-lg-3 control-label">
+        Note
+        
+<!--         <span ng-show="performanceForm.inputInterest.$valid" class="label-form-error"> Nombre non valide </span>
+ -->        <span ng-show="performanceForm.inputInterest.$error.min" class="label-form-error"> Inférieur à 1 </span>
+        <span ng-show="performanceForm.inputInterest.$error.max" class="label-form-error"> Supérieur à 10 </span>
+        
+        <!-- <tt>performanceForm.inputInterest.$valid = {{performanceForm.inputInterest.$valid}}</tt> -->
+
+      </label>
       <div class="col-lg-9">
-        <input type="text" ng-model="performance.interest" required class="form-control" placeholder="1 à 10">
+        <input type="number" min="1" max="10" ng-model="performance.interest" class="form-control" placeholder="1 à 10" name="inputInterest">
       </div>
     </div>
     <div class="form-group">
