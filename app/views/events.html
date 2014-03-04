@@ -74,7 +74,12 @@
           <img class="" src="{{event.picture}}" width="150">
         </div>
         <div class="col-sm-8">{{event.teasing}}</div>
+        <p class="teasing">intérêt :
+          <span  style="color:red" ng-repeat="i in [] | range:event.interest">
+            *
+          </span></p>
       </div>
+
       <div class="text-right">
         <button class="btn btn-primary text-right" ng-click="gotoEvent($index)">
           <i class="icon-chevron-right icon-white"></i><i class="icon-chevron-right icon-white"></i> Inscription
