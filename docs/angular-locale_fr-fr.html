@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>angular-locale_fr-fr.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="app.html">
+                app.js
+              </a>
+            
+              
+              <a class="source" href="add-performance.html">
+                add-performance.js
+              </a>
+            
+              
+              <a class="source" href="edit-event.html">
+                edit-event.js
+              </a>
+            
+              
+              <a class="source" href="edit-member.html">
+                edit-member.js
+              </a>
+            
+              
+              <a class="source" href="edit-performance.html">
+                edit-performance.js
+              </a>
+            
+              
+              <a class="source" href="edit-person.html">
+                edit-person.js
+              </a>
+            
+              
+              <a class="source" href="event.html">
+                event.js
+              </a>
+            
+              
+              <a class="source" href="events.html">
+                events.js
+              </a>
+            
+              
+              <a class="source" href="header.html">
+                header.js
+              </a>
+            
+              
+              <a class="source" href="login.html">
+                login.js
+              </a>
+            
+              
+              <a class="source" href="main.html">
+                main.js
+              </a>
+            
+              
+              <a class="source" href="members.html">
+                members.js
+              </a>
+            
+              
+              <a class="source" href="performance.html">
+                performance.js
+              </a>
+            
+              
+              <a class="source" href="speakers.html">
+                speakers.js
+              </a>
+            
+              
+              <a class="source" href="sponsors.html">
+                sponsors.js
+              </a>
+            
+              
+              <a class="source" href="calendar.html">
+                calendar.js
+              </a>
+            
+              
+              <a class="source" href="services.html">
+                services.js
+              </a>
+            
+              
+              <a class="source" href="angular-locale_fr-fr.html">
+                angular-locale_fr-fr.js
+              </a>
+            
+              
+              <a class="source" href="datepicker.html">
+                datepicker.js
+              </a>
+            
+              
+              <a class="source" href="ui-events.html">
+                ui-events.js
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>angular-locale_fr-fr.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>angular.module(<span class="hljs-string">"ngLocale"</span>, [], [<span class="hljs-string">"$provide"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($provide)</span> {</span>
+<span class="hljs-keyword">var</span> PLURAL_CATEGORY = {ZERO: <span class="hljs-string">"zero"</span>, ONE: <span class="hljs-string">"one"</span>, TWO: <span class="hljs-string">"two"</span>, FEW: <span class="hljs-string">"few"</span>, MANY: <span class="hljs-string">"many"</span>, OTHER: <span class="hljs-string">"other"</span>};
+$provide.value(<span class="hljs-string">"$locale"</span>, {<span class="hljs-string">"NUMBER_FORMATS"</span>:{<span class="hljs-string">"DECIMAL_SEP"</span>:<span class="hljs-string">","</span>,<span class="hljs-string">"GROUP_SEP"</span>:<span class="hljs-string">" "</span>,<span class="hljs-string">"PATTERNS"</span>:[{<span class="hljs-string">"minInt"</span>:<span class="hljs-number">1</span>,<span class="hljs-string">"minFrac"</span>:<span class="hljs-number">0</span>,<span class="hljs-string">"macFrac"</span>:<span class="hljs-number">0</span>,<span class="hljs-string">"posPre"</span>:<span class="hljs-string">""</span>,<span class="hljs-string">"posSuf"</span>:<span class="hljs-string">""</span>,<span class="hljs-string">"negPre"</span>:<span class="hljs-string">"-"</span>,<span class="hljs-string">"negSuf"</span>:<span class="hljs-string">""</span>,<span class="hljs-string">"gSize"</span>:<span class="hljs-number">3</span>,<span class="hljs-string">"lgSize"</span>:<span class="hljs-number">3</span>,<span class="hljs-string">"maxFrac"</span>:<span class="hljs-number">3</span>},{<span class="hljs-string">"minInt"</span>:<span class="hljs-number">1</span>,<span class="hljs-string">"minFrac"</span>:<span class="hljs-number">2</span>,<span class="hljs-string">"macFrac"</span>:<span class="hljs-number">0</span>,<span class="hljs-string">"posPre"</span>:<span class="hljs-string">""</span>,<span class="hljs-string">"posSuf"</span>:<span class="hljs-string">" \u00A4"</span>,<span class="hljs-string">"negPre"</span>:<span class="hljs-string">"-"</span>,<span class="hljs-string">"negSuf"</span>:<span class="hljs-string">" \u00A4"</span>,<span class="hljs-string">"gSize"</span>:<span class="hljs-number">3</span>,<span class="hljs-string">"lgSize"</span>:<span class="hljs-number">3</span>,<span class="hljs-string">"maxFrac"</span>:<span class="hljs-number">2</span>}],<span class="hljs-string">"CURRENCY_SYM"</span>:<span class="hljs-string">"€"</span>},<span class="hljs-string">"pluralCat"</span>:<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(n)</span> {</span>  <span class="hljs-keyword">if</span> (n &gt;= <span class="hljs-number">0</span> &amp;&amp; n &lt; <span class="hljs-number">2</span>) {    <span class="hljs-keyword">return</span> PLURAL_CATEGORY.ONE;  }  <span class="hljs-keyword">return</span> PLURAL_CATEGORY.OTHER;},<span class="hljs-string">"DATETIME_FORMATS"</span>:{<span class="hljs-string">"MONTH"</span>:[<span class="hljs-string">"janvier"</span>,<span class="hljs-string">"février"</span>,<span class="hljs-string">"mars"</span>,<span class="hljs-string">"avril"</span>,<span class="hljs-string">"mai"</span>,<span class="hljs-string">"juin"</span>,<span class="hljs-string">"juillet"</span>,<span class="hljs-string">"août"</span>,<span class="hljs-string">"septembre"</span>,<span class="hljs-string">"octobre"</span>,<span class="hljs-string">"novembre"</span>,<span class="hljs-string">"décembre"</span>],<span class="hljs-string">"SHORTMONTH"</span>:[<span class="hljs-string">"janv."</span>,<span class="hljs-string">"févr."</span>,<span class="hljs-string">"mars"</span>,<span class="hljs-string">"avr."</span>,<span class="hljs-string">"mai"</span>,<span class="hljs-string">"juin"</span>,<span class="hljs-string">"juil."</span>,<span class="hljs-string">"août"</span>,<span class="hljs-string">"sept."</span>,<span class="hljs-string">"oct."</span>,<span class="hljs-string">"nov."</span>,<span class="hljs-string">"déc."</span>],<span class="hljs-string">"DAY"</span>:[<span class="hljs-string">"dimanche"</span>,<span class="hljs-string">"lundi"</span>,<span class="hljs-string">"mardi"</span>,<span class="hljs-string">"mercredi"</span>,<span class="hljs-string">"jeudi"</span>,<span class="hljs-string">"vendredi"</span>,<span class="hljs-string">"samedi"</span>],<span class="hljs-string">"SHORTDAY"</span>:[<span class="hljs-string">"dim."</span>,<span class="hljs-string">"lun."</span>,<span class="hljs-string">"mar."</span>,<span class="hljs-string">"mer."</span>,<span class="hljs-string">"jeu."</span>,<span class="hljs-string">"ven."</span>,<span class="hljs-string">"sam."</span>],<span class="hljs-string">"AMPMS"</span>:[<span class="hljs-string">"AM"</span>,<span class="hljs-string">"PM"</span>],<span class="hljs-string">"medium"</span>:<span class="hljs-string">"d MMM y HH:mm:ss"</span>,<span class="hljs-string">"short"</span>:<span class="hljs-string">"dd/MM/yy HH:mm"</span>,<span class="hljs-string">"fullDate"</span>:<span class="hljs-string">"EEEE d MMMM y"</span>,<span class="hljs-string">"longDate"</span>:<span class="hljs-string">"d MMMM y"</span>,<span class="hljs-string">"mediumDate"</span>:<span class="hljs-string">"d MMM y"</span>,<span class="hljs-string">"shortDate"</span>:<span class="hljs-string">"dd/MM/yy"</span>,<span class="hljs-string">"mediumTime"</span>:<span class="hljs-string">"HH:mm:ss"</span>,<span class="hljs-string">"shortTime"</span>:<span class="hljs-string">"HH:mm"</span>},<span class="hljs-string">"id"</span>:<span class="hljs-string">"fr-fr"</span>});
+}]);</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>services.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="app.html">
+                app.js
+              </a>
+            
+              
+              <a class="source" href="add-performance.html">
+                add-performance.js
+              </a>
+            
+              
+              <a class="source" href="edit-event.html">
+                edit-event.js
+              </a>
+            
+              
+              <a class="source" href="edit-member.html">
+                edit-member.js
+              </a>
+            
+              
+              <a class="source" href="edit-performance.html">
+                edit-performance.js
+              </a>
+            
+              
+              <a class="source" href="edit-person.html">
+                edit-person.js
+              </a>
+            
+              
+              <a class="source" href="event.html">
+                event.js
+              </a>
+            
+              
+              <a class="source" href="events.html">
+                events.js
+              </a>
+            
+              
+              <a class="source" href="header.html">
+                header.js
+              </a>
+            
+              
+              <a class="source" href="login.html">
+                login.js
+              </a>
+            
+              
+              <a class="source" href="main.html">
+                main.js
+              </a>
+            
+              
+              <a class="source" href="members.html">
+                members.js
+              </a>
+            
+              
+              <a class="source" href="performance.html">
+                performance.js
+              </a>
+            
+              
+              <a class="source" href="speakers.html">
+                speakers.js
+              </a>
+            
+              
+              <a class="source" href="sponsors.html">
+                sponsors.js
+              </a>
+            
+              
+              <a class="source" href="calendar.html">
+                calendar.js
+              </a>
+            
+              
+              <a class="source" href="services.html">
+                services.js
+              </a>
+            
+              
+              <a class="source" href="angular-locale_fr-fr.html">
+                angular-locale_fr-fr.js
+              </a>
+            
+              
+              <a class="source" href="datepicker.html">
+                datepicker.js
+              </a>
+            
+              
+              <a class="source" href="ui-events.html">
+                ui-events.js
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>services.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-comment">/** Global services */</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>services local</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> SERVICES_URI = <span class="hljs-string">'http://localhost:3000'</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>services Heroku cloud
+var SERVICES_URI = ‘<a href="http://ippevents-services-node.herokuapp.com">http://ippevents-services-node.herokuapp.com</a>‘;</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-comment">/** Initialisation of connection services. */</span>
+ angular.module(<span class="hljs-string">'connectionServices'</span>, []).factory(<span class="hljs-string">'Connections'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($http)</span> {</span>
+
+    <span class="hljs-keyword">var</span> API_URI = SERVICES_URI + <span class="hljs-string">'/'</span>;
+
+    <span class="hljs-keyword">return</span> {
+
+        <span class="hljs-comment">/**
+         * Logout function.
+         */</span>
+        logout : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> $http.get(API_URI + <span class="hljs-string">'logout'</span>);
+        },
+
+        <span class="hljs-comment">/**
+         * Login function.
+         * @param {string} user - The user object
+         */</span>
+        login : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(user)</span> {</span>
+        <span class="hljs-keyword">var</span> payload = $.param({username: user.login, password: user.password});
+        <span class="hljs-keyword">var</span> config = {
+          headers: {<span class="hljs-string">'Content-Type'</span>:<span class="hljs-string">'application/x-www-form-urlencoded; charset=UTF-8'</span>},
+              withCredentials : <span class="hljs-literal">true</span>
+        }
+        <span class="hljs-keyword">return</span> $http.post(API_URI + <span class="hljs-string">'login'</span>, payload, config);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <pre><code>       <span class="hljs-keyword">return</span>  $http.post(API_URI + <span class="hljs-string">'login'</span>, {username:user.login, password:user.password}, {withCredentials : <span class="hljs-literal">true</span>});
+</code></pre>
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        }
+
+   };
+
+});
+
+<span class="hljs-comment">/** Initialisation of home services. */</span>
+angular.module(<span class="hljs-string">'homeServices'</span>, [<span class="hljs-string">'ngResource'</span>]).factory(<span class="hljs-string">'Home'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($resource)</span> {</span>
+  <span class="hljs-keyword">return</span> $resource(<span class="hljs-string">'/scripts/services/website.json'</span>);
+});
+
+angular.module(<span class="hljs-string">'eventsServices'</span>, []).factory(<span class="hljs-string">'Events'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($http)</span> {</span>
+    
+    <span class="hljs-keyword">var</span> API_URI = SERVICES_URI + <span class="hljs-string">'/events'</span>;
+    
+    <span class="hljs-keyword">return</span> {
+
+        <span class="hljs-comment">/**
+         * Fetch function.
+         */</span>
+        fetch : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> $http.get(API_URI);
+        },
+
+        create : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span> {</span>
+            <span class="hljs-keyword">return</span>  $http.post(API_URI, event);
+        },
+
+        <span class="hljs-keyword">delete</span>  : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(id)</span> {</span>
+            <span class="hljs-keyword">return</span> $http.delete(API_URI + <span class="hljs-string">'/'</span> + id);
+        },
+
+        fetchOne : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(id)</span> {</span>
+            <span class="hljs-keyword">return</span> $http.get(API_URI + <span class="hljs-string">'/'</span> + id);
+        },
+
+        fetchPerformance : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(eventId, performanceId)</span> {</span>
+            <span class="hljs-keyword">return</span> $http.get(API_URI + <span class="hljs-string">'/'</span> + eventId + <span class="hljs-string">'/performances/'</span> + performanceId);
+        },
+
+        update : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span> {</span>
+           <span class="hljs-keyword">return</span> $http.put(API_URI + <span class="hljs-string">'/'</span> + event._id, event);
+       }
+
+   };
+
+});
+
+angular.module(<span class="hljs-string">'performancesServices'</span>, [<span class="hljs-string">'ngResource'</span>]).factory(<span class="hljs-string">'Performance'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($resource)</span> {</span>
+    <span class="hljs-keyword">return</span> $resource(<span class="hljs-string">'/scripts/services/performance.json'</span>);
+})</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>angular.module(‘membersServices’, [‘ngResource’])
+.factory(‘Members’, function($resource) {
+  return $resource(‘/scripts/services/members.json’);
+});</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+angular.module(<span class="hljs-string">'membersServices'</span>, []).factory(<span class="hljs-string">'Members'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($http)</span> {</span>
+    
+    <span class="hljs-keyword">var</span> API_URI = SERVICES_URI + <span class="hljs-string">'/members'</span>;
+    
+    <span class="hljs-keyword">return</span> {
+
+        fetch : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> $http.get(API_URI);
+        },
+
+        create : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(member)</span> {</span>
+            <span class="hljs-keyword">return</span>  $http.post(API_URI, member);
+        },
+
+        <span class="hljs-keyword">delete</span>  : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(id)</span> {</span>
+            <span class="hljs-keyword">return</span> $http.delete(API_URI + <span class="hljs-string">'/'</span> + id);
+        },
+
+        fetchOne : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(id)</span> {</span>
+            <span class="hljs-keyword">return</span> $http.get(API_URI + <span class="hljs-string">'/'</span> + id);
+        },
+
+        update : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(member)</span> {</span>
+           <span class="hljs-keyword">return</span> $http.put(API_URI + <span class="hljs-string">'/'</span> + member._id, member);
+       }
+
+   };
+
+});
+
+angular.module(<span class="hljs-string">'speakersServices'</span>, []).factory(<span class="hljs-string">'Speakers'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($http)</span> {</span>
+    
+    <span class="hljs-keyword">var</span> API_URI = SERVICES_URI + <span class="hljs-string">'/findAllSpeakers'</span>;
+    <span class="hljs-keyword">var</span> API_URI_PERFORMANCES = SERVICES_URI + <span class="hljs-string">'/getPerformancesBySpeaker/'</span>;
+    
+    <span class="hljs-keyword">return</span> {
+
+        fetch : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> $http.get(API_URI);
+        },
+
+        findPerformances : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(firstname, lastname)</span> {</span>
+            <span class="hljs-keyword">return</span> $http.get(API_URI_PERFORMANCES + lastname + <span class="hljs-string">'/'</span> + firstname);
+        }
+
+   };
+
+});</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>angular.module(‘personServices’, [‘ngResource’])
+.factory(‘Persons’, function($resource) {
+  return $resource(‘/scripts/services/persons.json’);
+});</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+angular.module(<span class="hljs-string">'personsServices'</span>, []).factory(<span class="hljs-string">'Persons'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($http)</span> {</span>
+    
+    <span class="hljs-keyword">var</span> API_URI_PERSON = SERVICES_URI + <span class="hljs-string">'/person'</span>;
+    <span class="hljs-keyword">var</span> API_URI_PERSONS = SERVICES_URI + <span class="hljs-string">'/persons'</span>;
+    
+    <span class="hljs-keyword">return</span> {
+
+        fetch : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> $http.get(API_URI_PERSONS);
+        },
+
+        create : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(person)</span> {</span>
+            <span class="hljs-keyword">return</span>  $http.post(API_URI_PERSON, person);
+        },
+
+        <span class="hljs-keyword">delete</span>  : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(id)</span> {</span>
+            <span class="hljs-keyword">return</span> $http.delete(API_URI_PERSON + <span class="hljs-string">'/'</span> + id);
+        },
+
+        fetchOne : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(id)</span> {</span>
+            <span class="hljs-keyword">return</span> $http.get(API_URI_PERSON + <span class="hljs-string">'/'</span> + id);
+        },
+
+        update : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(person)</span> {</span>
+           <span class="hljs-keyword">return</span> $http.put(API_URI_PERSON + <span class="hljs-string">'/'</span> + person._id, person);
+       }
+   };
+});</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
