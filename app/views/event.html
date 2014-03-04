@@ -71,7 +71,7 @@
         </div>
          <div class="col-sm-4">
           <li ng-repeat="speaker in performance.speakers">
-          <p>{{speaker.email}}     {{speaker.twitter}}</p>
+          <p ng-show="speaker.email">{{speaker.email}}     {{speaker.twitter}}</p>
 
           </li>
         </div>
