@@ -238,3 +238,8 @@ list-event, .list-event {
       color: $white;
   }
 }
+/*
+Ajouter un border radius.
+Le padding est ajouté pour les coins à droite.
+*/
+.event{ @include border-radius(10px); padding:3px}
