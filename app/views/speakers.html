@@ -3,10 +3,8 @@
 	<ul>
 		<li ng-repeat="speaker in speakers | orderBy:'lastname'">
 			<a href="#/getPerformancesBySpeaker/{{speaker.lastname}}/{{speaker.firstname}}">{{speaker.firstname}} {{speaker.lastname}}</a>
-			{{speaker.email.length > 0 && ' / mail: ' || ''}} 
-			<a href="mailto:{{speaker.email}}">{{speaker.email}}</a>
-			{{speaker.twitter.length > 0 && ' / twitter :' || ''}}
-			<a href="{{speaker.twitter | toTwitterUrl}}">{{speaker.twitter}}</a>
+			<span ng-show="speaker.email"> / mail: <a href="mailto:{{speaker.email}}">{{speaker.email}}</a></span>
+			<span ng-show="speaker.twitter"> / twitter: <a href="{{speaker.twitter | toTwitterUrl}}">{{speaker.twitter}}</a></span>
 		</li>
 	</ul>
 </div>
