@@ -12,9 +12,21 @@ var app = angular.module('ippeventsApp', [
   'personsServices',
   'speakersServices',
   'eventUI',
+  'email-ui',
   'ui.date',
   'calendar-ui',
-  'ngCookies']);
+  'ngCookies',
+  'twitterIpp']);
+
+app.filter('range', function() {
+  return function(input, total) {
+    total = parseInt(total);
+    for (var i=0; i<total; i++)
+      input.push(i);
+    return input;
+  };
+});
+
 
 /**
  * Youpi tralalalala

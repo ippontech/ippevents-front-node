@@ -26,19 +26,58 @@
       </div>
     </div>
     <div class="form-group">
-
-      <label for="inputFirstname" class="col-lg-3 control-label">
-        Prénom
-        <span ng-show="performanceForm.inputFirstname.$error.required" class="label-form-error"> obligatoire !</span>
+      <label for="inputInterest" class="col-lg-3 control-label">Note
+                 <span ng-show="performanceForm.inputInterest.$error.min" class="label-form-error"> Inférieur à 1 </span>
+        <span ng-show="performanceForm.inputInterest.$error.max" class="label-form-error"> Supérieur à 10 </span>
+        
       </label>
+      <div class="col-lg-9">
+        <input type="number" min="1" max="10" ng-model="performance.interest" class="form-control" placeholder="1 à 10" name="inputInterest">
+      </div>
+    </div>
+    <div class="form-group">
+
+      <h3>Nouvel orateur</h3>
 
       <input type="text" name="inputFirstname" required ng-model="newspeaker.firstname" placeholder="Prénom"></input>
-      <input type="text" ng-model="newspeaker.lastname" placeholder="Nom"></input>
-      <input name="email" type="email" ng-model="newspeaker.email" placeholder="jondoe@ippon"></input>
+
+      <span ng-show="performanceForm.inputFirstname.$error.required" class="label-form-error">
+        <label for="inputFirstname" class="col-rg-3 control-label">
+          Prénom obligatoire
+        </label>
+      </span>
+      <br>
+
+      <input type="text" name="inputLastname" ng-model="newspeaker.lastname" required placeholder="Nom"></input>
+
+      <span ng-show="performanceForm.inputLastname.$error.required" class="label-form-error">
+        <label for="inputLastname" class="col-rg-3 control-label">
+          Nom obligatoire
+        </label>
+      </span>
+      <br>    
+      <input name="inputEmail" type="email" required ng-model="newspeaker.email" placeholder="jondoe@ippon"></input>
+
+      <span ng-show="performanceForm.inputEmail.$error.required" class="label-form-error">
+        <label for="inputEmail" class="col-rg-3 control-label">
+          Email obligatoire
+        </label>
+      </span>
+
+      <span ng-show="performanceForm.inputEmail.$error.email" class="label-form-error">
+        <label for="inputEmail" class="col-rg-3 control-label">
+          Email invalide (user@domain.com)
+        </label>
+      </span>
+<br>
       <input type="text" ng-model="newspeaker.twitter" placeholder="@jondoe"></input>
-      <button class="btn btn-primary" ng-click="addSpeaker()">Ajouter orateur</button>
+
+      <br><br>
+
+      <button class="btn btn-primary" ng-click="addSpeaker()">Ajouter orateur</button><br>
+
       <div ng-repeat="speaker in performance.speakers">
-       <span>{{speaker.firstname}} {{speaker.lastname}} {{speaker.email}} {{speaker.twitter}}</span>
+        <span>{{speaker.firstname}} {{speaker.lastname}} {{speaker.email}} {{speaker.twitter}}</span>
       </div>
     </div>
 

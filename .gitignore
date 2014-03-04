@@ -1,10 +1,11 @@
-node_modules
-dist
+node_modules/
+dist/
+docs/
 .tmp
 .sass-cache
-bower_components
+bower_components/
 .editorconfig
 .gitattributes
 .DS_Store
-app/vendor
-doc
+app/vendor/
+docs/
