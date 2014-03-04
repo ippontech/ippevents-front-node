@@ -238,3 +238,23 @@ list-event, .list-event {
       color: $white;
   }
 }
+
+.social-link-twitter {
+      @include social-link-mixin($social-link-color-twitter);
+}
+
+.social-link-github {
+      @include social-link-mixin($social-link-color-github);
+}
+
+.social-link-linkedin {
+      @include social-link-mixin($social-link-color-linkedin);
+}
+
+.social-link-googleplus {
+      @include social-link-mixin($social-link-color-googleplus);
+}
+
+.social-link-facebook {
+      @include social-link-mixin($social-link-color-facebook);
+}

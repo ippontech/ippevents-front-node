@@ -22,3 +22,7 @@
   border-right: 2px dashed $gray-lighter;
 }
 
+@mixin social-link-mixin($color) {
+	text-transform : lowercase;
+	color: $color;
+}
