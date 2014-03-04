@@ -33,11 +33,12 @@
     </div>
     <div class="form-group">
 
+      <h3>Nouvel orateur</h3>
 
       <input type="text" name="inputFirstname" required ng-model="newspeaker.firstname" placeholder="Prénom"></input>
 
       <span ng-show="performanceForm.inputFirstname.$error.required" class="label-form-error">
-        <label for="inputFirstname" class="col-lg-3 control-label">
+        <label for="inputFirstname" class="col-rg-3 control-label">
           Prénom obligatoire
         </label>
       </span>
@@ -46,21 +47,21 @@
       <input type="text" name="inputLastname" ng-model="newspeaker.lastname" required placeholder="Nom"></input>
 
       <span ng-show="performanceForm.inputLastname.$error.required" class="label-form-error">
-        <label for="inputLastname" class="col-lg-3 control-label">
+        <label for="inputLastname" class="col-rg-3 control-label">
           Nom obligatoire
         </label>
       </span>
-<br>    
+      <br>    
       <input name="inputEmail" type="email" required ng-model="newspeaker.email" placeholder="jondoe@ippon"></input>
 
       <span ng-show="performanceForm.inputEmail.$error.required" class="label-form-error">
-        <label for="inputEmail" class="col-lg-3 control-label">
+        <label for="inputEmail" class="col-rg-3 control-label">
           Email obligatoire
         </label>
       </span>
 
       <span ng-show="performanceForm.inputEmail.$error.email" class="label-form-error">
-        <label for="inputEmail" class="col-lg-3 control-label">
+        <label for="inputEmail" class="col-rg-3 control-label">
           Email invalide (user@domain.com)
         </label>
       </span>
