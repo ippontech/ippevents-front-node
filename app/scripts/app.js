@@ -14,7 +14,8 @@ var app = angular.module('ippeventsApp', [
   'eventUI',
   'ui.date',
   'calendar-ui',
-  'ngCookies']);
+  'ngCookies',
+  'twitterIpp']);
 
 app.filter('range', function() {
   return function(input, total) {
