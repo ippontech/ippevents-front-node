@@ -50,7 +50,7 @@
   </div>
 
   <ul class="list-unstyled list-light">
-    <li>
+    <li class="hidden-xs">
       <article class="row">
         <div class="col-sm-4">
           TITRE
@@ -65,15 +65,19 @@
     </li>
     <li ng-repeat="performance in event.performances | filter : search">
       <article class="row">
+        
         <div class="col-sm-4">
+          <span class="visible-xs">TITRE</span>
           <a href="/#/event/{{event._id}}/performance/{{performance._id}}">{{performance.title}}</a>
         </div>
         <div class="col-sm-4">
+          <span class="visible-xs">DESCRIPTION</span>
           {{performance.description}}
 <!--           {{session.speaker.firstname}}
           {{session.speaker.name}} -->
         </div>
          <div class="col-sm-4">
+          <span class="visible-xs">ORATEURS</span>
           <li ng-repeat="speaker in performance.speakers">
           <p ng-show="speaker.email">{{speaker.email}}     {{speaker.twitter}}</p>
 
