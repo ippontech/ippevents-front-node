@@ -2,8 +2,11 @@
 
 angular.module('email-ui', []).directive('email', function() {
   return {
-    restrict:'A',
+    restrict:'E',
     replace:true,
-    template:'<a href="mailto:{{member.email}}">{{member.email}}</a>'
+    scope:{
+    	value: "=value"
+    },
+    template:'<a href="mailto:{{value}}">{{value}}</a>'
   }
 });

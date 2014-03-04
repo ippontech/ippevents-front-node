@@ -2,7 +2,10 @@
 angular.module('twitterIpp', []).directive('twitter', function(){
 	return {
       restrict: 'E',
-      template: "<span ng-show ='speaker.twitter'>Twitter : <a href='{{speaker.twitter | toTwitterUrl}}'>{{speaker.twitter}}</a></span>",
+      scope:{
+      	value:"=value"
+      },
+      template: "<span ng-show ='value'>Twitter:&nbsp;<a href='{{value | toTwitterUrl}}'>{{value}}</a></span>",
       replace: true
       };
 });

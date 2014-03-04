@@ -2,9 +2,8 @@
 	<h1>Orateurs</h1>
 	<ul class="container-fluid">
 		<li ng-repeat="speaker in speakers | orderBy:'lastname'" class="row">
-			<div class="s_name col-sm-3"><a href="#/getPerformancesBySpeaker/{{speaker.lastname}}/{{speaker.firstname}}">{{speaker.firstname}} {{speaker.lastname}}</a></div>
-			<div class="s_email col-sm-3" ng-show="speaker.email">Mail: <a href="mailto:{{speaker.email}}">{{speaker.email}}</a></div>
-			<div class="s_twitter col-sm-3" ng-show="speaker.twitter"><twitter/></div>
+			<div class="s_name col-sm-3"><a href="#/getPerformancesBySpeaker/{{speaker.lastname}}/{{speaker.firstname}}">{{speaker.firstname}} {{speaker.lastname}}</a></div>	
+			<div class="s_twitter col-sm-3" ng-show="speaker.twitter"><contact value="speaker"/></div>
 		</li>
 	</ul>
 </div>
