@@ -2,6 +2,8 @@
 
 app.controller('SpeakersCtrl', function ($scope, $location, $filter, Speakers) {
 
+  $scope.twitterUrl = "https://twitter.com/";
+
   // Récupérations des orateurs
   Speakers.fetch().success(function(resp) {
       console.log(resp);
@@ -21,4 +23,10 @@ app.controller('PerformancesSpeakerCtrl', function ($scope, $location, $routePar
       $scope.performances = resp;
   });
 
+});
+
+app.filter('toTwitterUrl', function() {
+  return function(input) {
+    return "https://twitter.com/" + input.substring(1);
+  }
 });
