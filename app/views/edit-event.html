@@ -38,6 +38,38 @@
         <textarea ng-model="event.summary" class="form-control" name="inputSummary" placeholder="L'évènement incontesté sur ..." rows="6"></textarea>
       </div>
     </div>
+    <div ng-repeat="addr in event.address">
+      <div class="form-group">
+        <label class="col-lg-2 control-label" for="title">Titre</label>
+        <div class="col-lg-10">
+        <input ng-model="addr.title" class="form-control" name="title"/>
+      </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2 control-label" for="rue">Rue</label>
+        <div class="col-lg-10">
+        <input ng-model="addr.street" class="form-control" name="rue"/>
+      </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2 control-label" for="cp">Code Postal</label>
+        <div class="col-lg-10">
+        <input ng-model="addr.postal" name="cp" size="10" />
+      </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2 control-label" for="ville">Ville</label>
+        <div class="col-lg-10">
+        <input ng-model="addr.city" class="form-control" name="ville"/>
+      </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2 control-label" for="region">Region</label>
+        <div class="col-lg-10">
+        <input ng-model="addr.region" class="form-control" name="region"/>
+      </div>
+      </div>
+    </div>
     <div class="form-group">
       <label for="inputPicture" class="col-lg-2 control-label">Image</label>
       <div class="col-lg-6">

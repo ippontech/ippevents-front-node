@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>main.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="app.html">
+                app.js
+              </a>
+            
+              
+              <a class="source" href="add-performance.html">
+                add-performance.js
+              </a>
+            
+              
+              <a class="source" href="edit-event.html">
+                edit-event.js
+              </a>
+            
+              
+              <a class="source" href="edit-member.html">
+                edit-member.js
+              </a>
+            
+              
+              <a class="source" href="edit-performance.html">
+                edit-performance.js
+              </a>
+            
+              
+              <a class="source" href="edit-person.html">
+                edit-person.js
+              </a>
+            
+              
+              <a class="source" href="event.html">
+                event.js
+              </a>
+            
+              
+              <a class="source" href="events.html">
+                events.js
+              </a>
+            
+              
+              <a class="source" href="header.html">
+                header.js
+              </a>
+            
+              
+              <a class="source" href="login.html">
+                login.js
+              </a>
+            
+              
+              <a class="source" href="main.html">
+                main.js
+              </a>
+            
+              
+              <a class="source" href="members.html">
+                members.js
+              </a>
+            
+              
+              <a class="source" href="performance.html">
+                performance.js
+              </a>
+            
+              
+              <a class="source" href="speakers.html">
+                speakers.js
+              </a>
+            
+              
+              <a class="source" href="sponsors.html">
+                sponsors.js
+              </a>
+            
+              
+              <a class="source" href="calendar.html">
+                calendar.js
+              </a>
+            
+              
+              <a class="source" href="services.html">
+                services.js
+              </a>
+            
+              
+              <a class="source" href="angular-locale_fr-fr.html">
+                angular-locale_fr-fr.js
+              </a>
+            
+              
+              <a class="source" href="datepicker.html">
+                datepicker.js
+              </a>
+            
+              
+              <a class="source" href="ui-events.html">
+                ui-events.js
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>main.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-pi">'use strict'</span>;
+
+app.controller(<span class="hljs-string">'MainCtrl'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($scope, Events)</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Récupérations des évènements
+Events.query(function(data){
+    $scope.events = data;
+});</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+  $scope.Math = window.Math;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Récupérations des événements</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  Events.fetch().success(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resp)</span>{</span>
+    $scope.events = resp;
+  });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>redirection vers le détail</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  $scope.gotoEvent = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(index)</span>{</span>
+    $location.path(<span class="hljs-string">"/event/"</span> + $scope.events[index]._id);
+  };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>fonction de création d’un événement</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  $scope.createEvent = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span>{</span>
+
+    Events.create(event)
+    .success(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>on récupère la liste complète en base</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      Events.fetch().success(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resp)</span>{</span>
+        $scope.events = resp;
+      });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>—&gt; Récupérer uniquement l’instance créée et l’insérer dans le scope ?</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>copie du membre et ajout de la copie dans le scope
+var newMember = {};
+angular.copy(member, newMember);
+$scope.team.push(member);</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>on vide la saisie effectuée dans le formulaire</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      $scope.event = {};
+    })
+    .error(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resp, statusCode)</span>{</span>
+      console.log(resp);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>affichage d’un message d’erreur</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    });
+  };
+  
+  $scope.website = {
+			<span class="hljs-string">"common"</span> : {
+				<span class="hljs-string">"title"</span> : <span class="hljs-string">"ippevents"</span>,
+				<span class="hljs-string">"logo"</span> : <span class="hljs-string">"http://upload.wikimedia.org/wikipedia/fr/3/38/Logo_Ippon_Technologies.png"</span>,
+				<span class="hljs-string">"verbatim"</span> : <span class="hljs-string">"coding dojo"</span>,
+				<span class="hljs-string">"description"</span> : <span class="hljs-string">"Les IppEvents sont des événements gratuits pour découvrir les nouvelles tendances de développement chez Ippon Technologies ! Il s'agit de présentations (conférences, retours d’expérience, ateliers) d’environ une heure suivies d’un buffet ouvert à tous (interne, clients, consultants d’autres entreprises ou étudiants) et nous ont déjà permis de découvrir Git, Scrum, GWT, OSGI et autres Elastic Path."</span>,
+				<span class="hljs-string">"partners"</span> : [
+				              { <span class="hljs-string">"name"</span>:<span class="hljs-string">"ippon"</span>, <span class="hljs-string">"logo"</span>: <span class="hljs-string">"https://lh4.googleusercontent.com/-0EOnu_MOtMI/AAAAAAAAAAI/AAAAAAAAAAA/4Zft03miMEE/s48-c-k/photo.jpg"</span>},
+				              { <span class="hljs-string">"name"</span>:<span class="hljs-string">"devoxx"</span>, <span class="hljs-string">"logo"</span>: <span class="hljs-string">"http://blog.soat.fr/wp-content/uploads/2011/11/devoxx1.jpg"</span>},
+				              { <span class="hljs-string">"name"</span>:<span class="hljs-string">"google"</span>, <span class="hljs-string">"logo"</span>: <span class="hljs-string">"http://www.actupc.info/wp-content/uploads/icon_googlesearch.jpg"</span>},
+				              { <span class="hljs-string">"name"</span>:<span class="hljs-string">"castorama"</span>, <span class="hljs-string">"logo"</span>: <span class="hljs-string">"http://www.shopping-player.com/upload/logo%20casto.jpg"</span>}
+				             ],
+				<span class="hljs-string">"footer"</span> : [ {
+					<span class="hljs-string">"name"</span> : <span class="hljs-string">"home"</span>,
+					<span class="hljs-string">"link"</span> : <span class="hljs-string">"/"</span>
+				}, {
+					<span class="hljs-string">"name"</span> : <span class="hljs-string">"speakers"</span>,
+					<span class="hljs-string">"link"</span> : <span class="hljs-string">"/speakers"</span>
+				}, {
+					<span class="hljs-string">"name"</span> : <span class="hljs-string">"events"</span>,
+					<span class="hljs-string">"link"</span> : <span class="hljs-string">"/events"</span>
+				}, {
+					<span class="hljs-string">"name"</span> : <span class="hljs-string">"infos"</span>,
+					<span class="hljs-string">"link"</span> : <span class="hljs-string">"/infos"</span>
+				}, {
+					<span class="hljs-string">"name"</span> : <span class="hljs-string">"teams"</span>,
+					<span class="hljs-string">"link"</span> : <span class="hljs-string">"/teams"</span>
+				} ],
+
+				<span class="hljs-string">"menus"</span> : [ {
+					<span class="hljs-string">"name"</span> : <span class="hljs-string">"home"</span>,
+					<span class="hljs-string">"link"</span> : <span class="hljs-string">"/"</span>
+				}, {
+					<span class="hljs-string">"name"</span> : <span class="hljs-string">"speakers"</span>,
+					<span class="hljs-string">"link"</span> : <span class="hljs-string">"/speakers"</span>
+				}, {
+					<span class="hljs-string">"name"</span> : <span class="hljs-string">"events"</span>,
+					<span class="hljs-string">"link"</span> : <span class="hljs-string">"/events"</span>
+				}, {
+					<span class="hljs-string">"name"</span> : <span class="hljs-string">"infos"</span>,
+					<span class="hljs-string">"link"</span> : <span class="hljs-string">"/infos"</span>
+				}, {
+					<span class="hljs-string">"name"</span> : <span class="hljs-string">"teams"</span>,
+					<span class="hljs-string">"link"</span> : <span class="hljs-string">"/teams"</span>
+				} ]
+
+			},
+			<span class="hljs-string">"main_panel"</span> : {
+				<span class="hljs-string">"events"</span> : [
+						{
+							<span class="hljs-string">"title"</span> : <span class="hljs-string">"Let's sketch together"</span>,
+							<span class="hljs-string">"dateBegin"</span> : <span class="hljs-string">"1378332000000"</span>,
+							<span class="hljs-string">"dateEnd"</span> : <span class="hljs-string">"1378332000000"</span>,
+							<span class="hljs-string">"address"</span> : {
+								<span class="hljs-string">"street"</span> : <span class="hljs-string">"b"</span>,
+								<span class="hljs-string">"postal"</span> : <span class="hljs-string">"d"</span>,
+								<span class="hljs-string">"city"</span> : <span class="hljs-string">"f"</span>,
+								<span class="hljs-string">"region"</span> : <span class="hljs-string">"d"</span>,
+								<span class="hljs-string">"country"</span> : <span class="hljs-string">"f"</span>,
+								<span class="hljs-string">"geolocalisation"</span> : <span class="hljs-string">"d"</span>
+							},
+							<span class="hljs-string">"teasing"</span> : <span class="hljs-string">"Let's sketch together, ou comment le combo papier/crayon se trouve être le meilleur moyen pour commencer une communication orale !"</span>,
+							<span class="hljs-string">"summary"</span> : <span class="hljs-string">"Si la collaboration quotidienne semble être du bon sens dans une équipe agile, on s'aperçoit que ce principe est trop souvent laissé de côté dès qu’il s’agit de questions portant sur l’interface, le design d’information ou la structuration de l’écran. Cet atelier propose de palier ce manque en facilitant la collaboration des différentes parties prenantes d'un projet autour d'une simple feuille de papier."</span>,
+							<span class="hljs-string">"description"</span> : <span class="hljs-string">"On entend bien souvent parler de collaboration ou de coopération au sein d'organisations ou d'équipes agiles. C'est d'ailleurs l'un des principes du manifeste agile : \"Les utilisateurs ou leurs représentants et les développeurs doivent travailler ensemble quotidiennement tout au long du projet\". Si ce principe semble du bon sens, on s'aperçoit qu'il est trop souvent laissé de côté dès qu’il s’agit de questions portant sur l’interface, le design d’information ou la structuration de l’écran. Cet atelier propose de palier ce manque en facilitant la collaboration des différentes parties prenantes d'un projet autour d'une simple feuille de papier. Si de cet exercice en découle nécessairement un livrable : une maquette ; il possède également de nombreuses vertus cachées qui vont bien au delà de l'aspect visuel."</span>,
+							<span class="hljs-string">"maxPeople"</span> : <span class="hljs-number">18</span>,
+							<span class="hljs-string">"picture"</span> : <span class="hljs-string">"http://ebmedia.eventbrite.com/s3-build/images/2100757/36314544770/1/logo.png"</span>
+						},
+						{
+							<span class="hljs-string">"title"</span> : <span class="hljs-string">"Evenement 2"</span>,
+							<span class="hljs-string">"dateBegin"</span> : <span class="hljs-string">"1378332000000"</span>,
+							<span class="hljs-string">"dateEnd"</span> : <span class="hljs-string">"1378332000000"</span>,
+							<span class="hljs-string">"address"</span> : {
+								<span class="hljs-string">"street"</span> : <span class="hljs-string">"b"</span>,
+								<span class="hljs-string">"postal"</span> : <span class="hljs-string">"d"</span>,
+								<span class="hljs-string">"city"</span> : <span class="hljs-string">"f"</span>,
+								<span class="hljs-string">"region"</span> : <span class="hljs-string">"d"</span>,
+								<span class="hljs-string">"country"</span> : <span class="hljs-string">"f"</span>,
+								<span class="hljs-string">"geolocalisation"</span> : <span class="hljs-string">"d"</span>
+							},
+							<span class="hljs-string">"teasing"</span> : <span class="hljs-string">""</span>,
+							<span class="hljs-string">"summary"</span> : <span class="hljs-string">""</span>,
+							<span class="hljs-string">"description"</span> : <span class="hljs-string">"Hello World"</span>,
+							<span class="hljs-string">"maxPeople"</span> : <span class="hljs-number">50</span>,
+							<span class="hljs-string">"picture"</span> : <span class="hljs-string">"http://ebmedia.eventbrite.com/s3-build/images/2100757/36314544770/1/logo.png"</span>
+						},
+						{
+							<span class="hljs-string">"title"</span> : <span class="hljs-string">"Evenement 3"</span>,
+							<span class="hljs-string">"dateBegin"</span> : <span class="hljs-string">"1378332000000"</span>,
+							<span class="hljs-string">"dateEnd"</span> : <span class="hljs-string">"1378332000000"</span>,
+							<span class="hljs-string">"address"</span> : {
+								<span class="hljs-string">"street"</span> : <span class="hljs-string">"b"</span>,
+								<span class="hljs-string">"postal"</span> : <span class="hljs-string">"d"</span>,
+								<span class="hljs-string">"city"</span> : <span class="hljs-string">"f"</span>,
+								<span class="hljs-string">"region"</span> : <span class="hljs-string">"d"</span>,
+								<span class="hljs-string">"country"</span> : <span class="hljs-string">"f"</span>,
+								<span class="hljs-string">"geolocalisation"</span> : <span class="hljs-string">"d"</span>
+							},
+							<span class="hljs-string">"teasing"</span> : <span class="hljs-string">""</span>,
+							<span class="hljs-string">"summary"</span> : <span class="hljs-string">""</span>,
+							<span class="hljs-string">"description"</span> : <span class="hljs-string">"Hello World"</span>,
+							<span class="hljs-string">"maxPeople"</span> : <span class="hljs-number">50</span>,
+							<span class="hljs-string">"picture"</span> : <span class="hljs-string">"http://ebmedia.eventbrite.com/s3-build/images/2100757/36314544770/1/logo.png"</span>
+						},
+						{
+							<span class="hljs-string">"title"</span> : <span class="hljs-string">"Evenement 4"</span>,
+							<span class="hljs-string">"dateBegin"</span> : <span class="hljs-string">"1378332000000"</span>,
+							<span class="hljs-string">"dateEnd"</span> : <span class="hljs-string">"1378332000000"</span>,
+							<span class="hljs-string">"address"</span> : {
+								<span class="hljs-string">"street"</span> : <span class="hljs-string">"b"</span>,
+								<span class="hljs-string">"postal"</span> : <span class="hljs-string">"d"</span>,
+								<span class="hljs-string">"city"</span> : <span class="hljs-string">"f"</span>,
+								<span class="hljs-string">"region"</span> : <span class="hljs-string">"d"</span>,
+								<span class="hljs-string">"country"</span> : <span class="hljs-string">"f"</span>,
+								<span class="hljs-string">"geolocalisation"</span> : <span class="hljs-string">"d"</span>
+							},
+							<span class="hljs-string">"teasing"</span> : <span class="hljs-string">""</span>,
+							<span class="hljs-string">"summary"</span> : <span class="hljs-string">""</span>,
+							<span class="hljs-string">"description"</span> : <span class="hljs-string">"Hello World"</span>,
+							<span class="hljs-string">"maxPeople"</span> : <span class="hljs-number">200</span>,
+							<span class="hljs-string">"picture"</span> : <span class="hljs-string">"http://ebmedia.eventbrite.com/s3-build/images/2100757/36314544770/1/logo.png"</span>
+						},
+						{
+							<span class="hljs-string">"title"</span> : <span class="hljs-string">"Evenement 5"</span>,
+							<span class="hljs-string">"dateBegin"</span> : <span class="hljs-string">"1378332000000"</span>,
+							<span class="hljs-string">"dateEnd"</span> : <span class="hljs-string">"1378332000000"</span>,
+							<span class="hljs-string">"address"</span> : {
+								<span class="hljs-string">"street"</span> : <span class="hljs-string">"b"</span>,
+								<span class="hljs-string">"postal"</span> : <span class="hljs-string">"d"</span>,
+								<span class="hljs-string">"city"</span> : <span class="hljs-string">"f"</span>,
+								<span class="hljs-string">"region"</span> : <span class="hljs-string">"d"</span>,
+								<span class="hljs-string">"country"</span> : <span class="hljs-string">"f"</span>,
+								<span class="hljs-string">"geolocalisation"</span> : <span class="hljs-string">"d"</span>
+							},
+							<span class="hljs-string">"teasing"</span> : <span class="hljs-string">""</span>,
+							<span class="hljs-string">"summary"</span> : <span class="hljs-string">""</span>,
+							<span class="hljs-string">"description"</span> : <span class="hljs-string">"Hello World"</span>,
+							<span class="hljs-string">"maxPeople"</span> : <span class="hljs-number">24</span>,
+							<span class="hljs-string">"picture"</span> : <span class="hljs-string">"http://ebmedia.eventbrite.com/s3-build/images/2100757/36314544770/1/logo.png"</span>
+						},
+						{
+							<span class="hljs-string">"title"</span> : <span class="hljs-string">"Evenement 6"</span>,
+							<span class="hljs-string">"dateBegin"</span> : <span class="hljs-string">"1378332000000"</span>,
+							<span class="hljs-string">"dateEnd"</span> : <span class="hljs-string">"1378332000000"</span>,
+							<span class="hljs-string">"address"</span> : {
+								<span class="hljs-string">"street"</span> : <span class="hljs-string">"b"</span>,
+								<span class="hljs-string">"postal"</span> : <span class="hljs-string">"d"</span>,
+								<span class="hljs-string">"city"</span> : <span class="hljs-string">"f"</span>,
+								<span class="hljs-string">"region"</span> : <span class="hljs-string">"d"</span>,
+								<span class="hljs-string">"country"</span> : <span class="hljs-string">"f"</span>,
+								<span class="hljs-string">"geolocalisation"</span> : <span class="hljs-string">"d"</span>
+							},
+							<span class="hljs-string">"teasing"</span> : <span class="hljs-string">""</span>,
+							<span class="hljs-string">"summary"</span> : <span class="hljs-string">""</span>,
+							<span class="hljs-string">"description"</span> : <span class="hljs-string">"Hello World"</span>,
+							<span class="hljs-string">"maxPeople"</span> : <span class="hljs-number">18</span>,
+							<span class="hljs-string">"picture"</span> : <span class="hljs-string">"http://ebmedia.eventbrite.com/s3-build/images/2100757/36314544770/1/logo.png"</span>
+						} ]
+			},
+			<span class="hljs-string">"customs"</span> : {
+				<span class="hljs-string">"css"</span> : [ {
+					<span class="hljs-string">"link"</span> : <span class="hljs-string">"custom.css"</span>
+				}, {
+					<span class="hljs-string">"link"</span> : <span class="hljs-string">"custom2.css"</span>
+				} ],
+				<span class="hljs-string">"scripts"</span> : [ {
+					<span class="hljs-string">"link"</span> : <span class="hljs-string">"/scripts/custom/js/custom.js"</span>
+				}, {
+					<span class="hljs-string">"link"</span> : <span class="hljs-string">"/scripts/custom/js/custom2.js"</span>
+				} ]
+			}
+
+		};
+
+});</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

@@ -10,6 +10,9 @@ app.controller('EditEventCtrl', function ($scope, $location, $routeParams, Event
       $scope.event = resp;
       $scope.event.dateBegin = new Date($scope.event.dateBegin);
       $scope.event.dateEnd = new Date($scope.event.dateEnd);
+      if ($scope.event.address.length == 0) {
+        $scope.event.address.push({});
+      }
     })
     .error(function(resp){
       console.log(resp);
