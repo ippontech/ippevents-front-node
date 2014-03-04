@@ -5,7 +5,7 @@
 			<a href="#/getPerformancesBySpeaker/{{speaker.lastname}}/{{speaker.firstname}}">{{speaker.firstname}} {{speaker.lastname}}</a>
 			{{speaker.email.length > 0 && ' / mail: ' || ''}} 
 			<a href="mailto:{{speaker.email}}">{{speaker.email}}</a>
-			<span twitter-directive/>
+			<twitter></twitter>
 			<!--{{speaker.twitter.length > 0 && ' / twitter :' || ''}}
 			<a href="{{speaker.twitter | toTwitterUrl}}">{{speaker.twitter}}</a> -->
 		</li>
