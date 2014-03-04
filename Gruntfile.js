@@ -340,7 +340,20 @@ module.exports = function (grunt) {
           output: 'docs/'
         }
       }
+    },
+     // ### grunt-targz configuration
+    targz: {
+      standalone_win: {
+        files: {
+            "build/node_modules/ippEvent/build":  "tmp/win/ippEvent-nw.tgz"
+        }
+    },
+      standalone_mac: {
+        files: {
+            "build/node_modules/ippEvent/build":  "tmp/mac/ippEvent-nw.tgz"
+        }
     }
+  }
   });
 
   grunt.registerTask('server', function (target) {
@@ -378,6 +391,12 @@ module.exports = function (grunt) {
     'usemin',
     'groc'
   ]);
+
+
+  grunt.registerTask('release:standalone_mac',['build', 'targz:standalone_mac']);
+
+  grunt.registerTask('release:standalone_win',['build', 'targz:standalone_win']);
+
 
   grunt.registerTask('default', [
     'jshint',
