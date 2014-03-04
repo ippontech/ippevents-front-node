@@ -31,7 +31,7 @@ app.controller('AddPerformanceCtrl', function ($scope, $location, $routeParams, 
 
   // fonction de création
   $scope.createPerformance = function() {
-    
+    $log.log('createPerformance');
     $scope.event.performances.push($scope.performance);
     
     Events.update($scope.event)

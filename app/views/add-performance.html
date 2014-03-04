@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="iputTimeBox" class="col-lg-3 control-label">Durée (en minutes)</label>
+      <label for="iputTimeBox" class="col-lg-3 control-label">Durée (en minutes test)</label>
       <div class="col-lg-9">
         <input type="text" ng-model="performance.timebox" required class="form-control" placeholder="Durée de la session">
       </div>
@@ -29,9 +29,12 @@
     <div class="form-group">
       <input type="text" ng-model="newspeaker.firstname" placeholder="Prénom"></input>
       <input type="text" ng-model="newspeaker.lastname" placeholder="Nom"></input>
+      <input type="text" ng-model="newspeaker.email" placeholder="Email"></input>
+      <input type="text" ng-model="newspeaker.twitter" placeholder="Twitter"></input>
+
       <button class="btn btn-primary" ng-click="addSpeaker()">Ajouter orateur</button>
       <div ng-repeat="speaker in performance.speakers">
-       <span>{{speaker.firstname}} {{speaker.lastname}}</span>
+       <span>{{speaker.firstname}} {{speaker.lastname}} {{speaker.email}} {{speaker.twitter}}</span>
       </div>
     </div>
     <div class="text-center">
