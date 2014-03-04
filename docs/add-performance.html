@@ -197,7 +197,7 @@ $scope.updateEvent = function(event){
             </div>
             
             <div class="content"><div class='highlight'><pre>  $scope.createPerformance = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    
+    $log.log(<span class="hljs-string">'createPerformance'</span>);
     $scope.event.performances.push($scope.performance);
     
     Events.update($scope.event)
